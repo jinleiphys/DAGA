@@ -25,7 +25,7 @@ Status as of 2026-04-09. Keep this file updated as things move.
 
 - [ ] **Decline chart** — pull 1970–2025 publication counts for direct-reaction keywords vs. ab initio / DFT / ML from INSPIRE-HEP or NASA ADS; generate a single SVG figure; embed in a new section of `why.html` (or a small `decline.html`). Converts the "I think it's declining" claim into an objective artifact.
 - [x] **Hall of Fame page** (`legends.html`) — 10 legends (Satchler, Austern, Glauber, Tostevin, Thompson, Nunes, Johnson, Lane, Feshbach, Macfarlane & French) with contribution, Boss quote, and key reference
-- [ ] **Lexicon page** (`lexicon.html`) — Boss-voice definitions of DWBA, ADWA, CDCC, R-matrix, optical potential, ANC, Glauber, eikonal, post-prior, Lane potential, spectroscopic factor, etc.
+- [x] **Lexicon page** (`lexicon.html`) — 18 direct-reaction terms with Boss quote + technical "real deal" line + jump index
 
 ## 🧰 Tier 2 — solid but more work
 

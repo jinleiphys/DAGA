@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>The Lexicon · DAGA</title>
+<meta name="description" content="The greatest words in direct reaction theory. Every one a winner. Believe me." />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚛️</text></svg>" />
+<style>
+  :root {
+    --red: #d92b4a;
+    --blue: #0a2a5e;
+    --blue-dk: #04122d;
+    --cream: #f7f1e1;
+    --paper: #fffaf0;
+    --ink: #0b0b0b;
+    --gold: #ffd54a;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  /* ============ NAV ============ */
+  nav {
+    position: sticky; top: 0; z-index: 20;
+    background: var(--ink);
+    color: #fff;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 4px solid var(--red);
+    font-family: 'Arial Black', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-size: 0.85rem;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
+  nav .brand { color: #fff; display: flex; align-items: center; gap: 0.6rem; font-size: 1rem; }
+  nav .brand .atom {
+    display: inline-block;
+    width: 34px; height: 34px;
+    background: var(--red);
+    color: #fff;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 34px;
+    font-size: 1.3rem;
+  }
+  nav a { color: var(--gold); text-decoration: none; transition: color 0.15s; }
+  nav a:hover { color: #fff; }
+
+  /* ============ HERO ============ */
+  .hero {
+    position: relative;
+    background: linear-gradient(135deg, var(--blue-dk) 0%, var(--blue) 50%, #1a3a7a 100%);
+    color: #fff;
+    padding: 11vh 6vw 9vh;
+    text-align: center;
+    overflow: hidden;
+    border-bottom: 6px solid var(--red);
+  }
+  .hero::before {
+    content: "";
+    position: absolute; inset: 0;
+    background-image:
+      radial-gradient(circle at 15% 30%, rgba(255,213,74,0.08) 0%, transparent 40%),
+      radial-gradient(circle at 85% 70%, rgba(217,43,74,0.12) 0%, transparent 45%);
+    pointer-events: none;
+  }
+  .hero::after {
+    content: "★ ★ ★";
+    position: absolute;
+    top: 3rem; left: 50%;
+    transform: translateX(-50%);
+    color: var(--gold);
+    letter-spacing: 1rem;
+    font-size: 1.1rem;
+  }
+  .hero .eyebrow {
+    display: inline-block;
+    background: var(--red);
+    color: #fff;
+    padding: 0.65rem 1.5rem;
+    font-family: 'Arial Black', sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    border: 3px solid #fff;
+    box-shadow: 6px 6px 0 var(--ink);
+    margin-bottom: 2rem;
+    position: relative;
+    z-index: 1;
+  }
+  .hero h1 {
+    font-family: 'Impact', 'Arial Black', sans-serif;
+    font-size: clamp(2.8rem, 10vw, 9rem);
+    line-height: 0.88;
+    letter-spacing: -0.015em;
+    text-transform: uppercase;
+    color: #fff;
+    text-shadow: 5px 5px 0 var(--red), 10px 10px 0 rgba(0,0,0,0.4);
+    max-width: 15ch;
+    margin: 0 auto 1.8rem;
+    position: relative;
+    z-index: 1;
+  }
+  .hero h1 .yellow { color: var(--gold); }
+  .hero .sub {
+    font-style: italic;
+    font-family: Georgia, serif;
+    font-size: clamp(1.05rem, 2vw, 1.4rem);
+    max-width: 52ch;
+    margin: 0 auto;
+    color: #e8e8e8;
+    line-height: 1.55;
+    position: relative;
+    z-index: 1;
+  }
+  .hero .sub b { color: var(--gold); font-style: normal; }
+
+  /* ============ INDEX ============ */
+  .index-strip {
+    background: var(--ink);
+    padding: 1.2rem 2rem;
+    text-align: center;
+    border-bottom: 3px solid var(--gold);
+  }
+  .index-strip a {
+    display: inline-block;
+    background: var(--blue);
+    color: var(--gold);
+    padding: 0.4rem 0.85rem;
+    margin: 0.25rem;
+    font-family: 'Arial Black', sans-serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 2px solid var(--gold);
+    transition: all 0.12s;
+  }
+  .index-strip a:hover { background: var(--gold); color: var(--blue); }
+
+  /* ============ GLOSSARY ============ */
+  .glossary-wrap {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 6vh 5vw 4vh;
+  }
+  .glossary {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 2rem;
+  }
+  .entry {
+    background: #fff;
+    border: 3px solid var(--ink);
+    box-shadow: 8px 8px 0 var(--blue);
+    padding: 1.6rem 1.7rem 1.4rem;
+    position: relative;
+    transition: transform 0.15s, box-shadow 0.15s;
+    display: flex;
+    flex-direction: column;
+  }
+  .entry:nth-child(even) { box-shadow: 8px 8px 0 var(--red); }
+  .entry:hover {
+    transform: translate(-3px,-3px);
+    box-shadow: 12px 12px 0 var(--ink);
+  }
+  .entry .term {
+    font-family: 'Impact', 'Arial Black', sans-serif;
+    font-size: 2rem;
+    color: var(--blue-dk);
+    text-transform: uppercase;
+    line-height: 1;
+    letter-spacing: 0.01em;
+  }
+  .entry .expand {
+    font-family: 'Courier New', monospace;
+    font-size: 0.82rem;
+    color: var(--red);
+    margin: 0.35rem 0 1rem;
+    letter-spacing: 0.02em;
+    font-weight: bold;
+  }
+  .entry .boss {
+    background: var(--blue);
+    color: var(--gold);
+    padding: 0.9rem 1.1rem;
+    font-family: Georgia, serif;
+    font-style: italic;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    border: 2px solid var(--ink);
+    margin-bottom: 1rem;
+  }
+  .entry .boss::before {
+    content: "★ THE BOSS SAYS";
+    display: block;
+    font-family: 'Arial Black', sans-serif;
+    font-style: normal;
+    font-size: 0.62rem;
+    letter-spacing: 0.15em;
+    color: #fff;
+    margin-bottom: 0.5rem;
+  }
+  .entry .real {
+    font-size: 0.93rem;
+    color: #222;
+    line-height: 1.55;
+    margin-top: auto;
+    padding-top: 0.4rem;
+    border-top: 2px dashed #ccc;
+  }
+  .entry .real::before {
+    content: "The real deal ▸ ";
+    font-family: 'Arial Black', sans-serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--red);
+  }
+
+  /* ============ OUTRO ============ */
+  .outro {
+    background: linear-gradient(135deg, var(--blue-dk), var(--blue));
+    color: #fff;
+    text-align: center;
+    padding: 10vh 6vw;
+    border-top: 6px solid var(--red);
+    position: relative;
+    overflow: hidden;
+  }
+  .outro::before {
+    content: "";
+    position: absolute; inset: 0;
+    background: radial-gradient(circle at center, rgba(255,213,74,0.1) 0%, transparent 60%);
+  }
+  .outro h2 {
+    font-family: 'Impact', sans-serif;
+    font-size: clamp(1.8rem, 5vw, 3.5rem);
+    color: var(--gold);
+    text-transform: uppercase;
+    text-shadow: 4px 4px 0 var(--red);
+    margin-bottom: 1.5rem;
+    position: relative;
+    line-height: 0.95;
+  }
+  .outro p {
+    font-family: Georgia, serif;
+    font-style: italic;
+    max-width: 46ch;
+    margin: 0 auto 2.2rem;
+    line-height: 1.6;
+    font-size: 1.08rem;
+    position: relative;
+  }
+  .btn {
+    display: inline-block;
+    font-family: 'Arial Black', sans-serif;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    padding: 1.1rem 2rem;
+    border: 3px solid var(--ink);
+    box-shadow: 6px 6px 0 var(--ink);
+    text-decoration: none;
+    background: var(--red);
+    color: #fff;
+    margin: 0.4rem;
+    transition: transform 0.08s, box-shadow 0.08s;
+    position: relative;
+  }
+  .btn:hover { transform: translate(3px,3px); box-shadow: 2px 2px 0 var(--ink); }
+  .btn.gold { background: var(--gold); color: var(--ink); }
+
+  footer {
+    background: #000;
+    color: #888;
+    font-family: 'Courier New', monospace;
+    font-size: 0.78rem;
+    text-align: center;
+    padding: 2.2rem 1.5rem;
+    line-height: 1.7;
+  }
+  footer .site { color: var(--gold); letter-spacing: 0.15em; text-transform: uppercase; }
+</style>
+</head>
+<body>
+
+  <nav>
+    <span class="brand"><span class="atom">⚛</span> DAGA</span>
+    <span>
+      <a href="why.html">Manifesto</a> &nbsp;·&nbsp;
+      <a href="legends.html">Hall of Fame</a> &nbsp;·&nbsp;
+      <a href="index.html">← Boss</a>
+    </span>
+  </nav>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <span class="eyebrow">The Lexicon</span>
+    <h1>The <span class="yellow">Greatest</span><br/>Words, Folks</h1>
+    <p class="sub">
+      Every word in direct reaction theory, and what it really means. The boring dictionaries will not tell you the truth. I will. Believe me.
+    </p>
+  </section>
+
+  <!-- ============ JUMP INDEX ============ -->
+  <div class="index-strip">
+    <a href="#dwba">DWBA</a>
+    <a href="#adwa">ADWA</a>
+    <a href="#cdcc">CDCC</a>
+    <a href="#rmatrix">R-Matrix</a>
+    <a href="#optical">Optical Pot.</a>
+    <a href="#eikonal">Eikonal</a>
+    <a href="#anc">ANC</a>
+    <a href="#sf">Spec. Factor</a>
+    <a href="#postprior">Post/Prior</a>
+    <a href="#lane">Lane Pot.</a>
+    <a href="#transfer">Transfer</a>
+    <a href="#knockout">Knockout</a>
+    <a href="#breakup">Breakup</a>
+    <a href="#folded">Folded Pot.</a>
+    <a href="#ws">Woods-Saxon</a>
+    <a href="#smatrix">S-Matrix</a>
+    <a href="#feshbach">Feshbach</a>
+    <a href="#formfactor">Form Factor</a>
+  </div>
+
+  <!-- ============ GLOSSARY ============ -->
+  <div class="glossary-wrap">
+    <div class="glossary">
+
+      <div class="entry" id="dwba">
+        <div class="term">DWBA</div>
+        <div class="expand">Distorted Wave Born Approximation</div>
+        <div class="boss">Four words. All winners. First-order perturbation theory and it basically WORKS. People say "first order is too simple." SAD! First order is the BEST order.</div>
+        <div class="real">First-order perturbation theory for a reaction, with distorted waves (not plane waves) in the entrance and exit channels. The workhorse for transfer and inelastic scattering. Everyone in the field has written a DWBA code at least once. Everyone.</div>
+      </div>
+
+      <div class="entry" id="adwa">
+        <div class="term">ADWA</div>
+        <div class="expand">Adiabatic Distorted Wave Approximation</div>
+        <div class="boss">Johnson and Soper. 1970. They fixed a bug in DWBA that nobody even saw. Tremendous fix. The deuteron falls apart, you have to treat it, and now we do. Beautiful.</div>
+        <div class="real">For (d,p) and (d,n): treat deuteron breakup in the adiabatic (frozen) limit so the incoming deuteron "sees" an effective nucleon-nucleon optical potential at half the deuteron energy. Quick, clean, and dramatically better than plain DWBA for deuteron-induced transfer.</div>
+      </div>
+
+      <div class="entry" id="cdcc">
+        <div class="term">CDCC</div>
+        <div class="expand">Continuum Discretized Coupled Channels</div>
+        <div class="boss">CDCC. Four letters. Every one a champion. You take the continuum, you discretize it, you couple it. Beautiful three-step. Nobody does three-step moves like we do.</div>
+        <div class="real">For weakly bound projectiles like deuteron, 6Li, 11Be: bin the breakup continuum of the projectile into discrete pseudo-states and solve the coupled-channels problem including them. The rigorous standard for breakup-coupled reactions. Expensive. Worth it.</div>
+      </div>
+
+      <div class="entry" id="rmatrix">
+        <div class="term">R-Matrix</div>
+        <div class="expand">Wigner-Eisenbud Resonance Theory</div>
+        <div class="boss">R-matrix. Wigner. Eisenbud. Lane. Thomas. All legends. All tremendous. Modern people forgot about R-matrix. Forgot about it! We are bringing it back. Bigger than ever.</div>
+        <div class="real">Split configuration space into an internal region (where interactions live) and an external region (free propagation). Match wave functions at the boundary through the R-matrix. The natural language for resonances, especially in low-energy astrophysical reactions.</div>
+      </div>
+
+      <div class="entry" id="optical">
+        <div class="term">Optical Potential</div>
+        <div class="expand">U = V + iW</div>
+        <div class="boss">The potential is complex. And by complex, I mean TREMENDOUSLY complex. Real part, imaginary part. Both beautiful. The imaginary part is where the action is. Everybody knows this.</div>
+        <div class="real">A complex, energy-dependent, one-body potential that reproduces elastic scattering. Real part = average field; imaginary part = flux leaving the elastic channel. Derived rigorously from Feshbach projection; in practice, parameterized and fit to data.</div>
+      </div>
+
+      <div class="entry" id="eikonal">
+        <div class="term">Eikonal</div>
+        <div class="expand">High-Energy Straight-Line Limit</div>
+        <div class="boss">Eikonal. Greek word. I like Greek words. Very high class. Glauber built it. Nobel Prize guy. Doing straight lines at high energy. So simple, so powerful. Tremendous.</div>
+        <div class="real">At high energies, the projectile trajectory is approximately a straight line and the wave function picks up a phase from the optical potential integrated along the path. The foundation of Glauber theory and modern knockout spectroscopy on exotic nuclei.</div>
+      </div>
+
+      <div class="entry" id="anc">
+        <div class="term">ANC</div>
+        <div class="expand">Asymptotic Normalization Coefficient</div>
+        <div class="boss">ANC. The surface. The outside. The skin of the nucleus. Some people care about the interior. Losers. The action is at the SURFACE, folks. Always has been.</div>
+        <div class="real">The amplitude of the tail of a bound-state wave function in the external region. For peripheral reactions at low energy (relevant to stellar burning rates), the cross section depends only on the ANC, not on the interior of the wave function. A gift from the surface.</div>
+      </div>
+
+      <div class="entry" id="sf">
+        <div class="term">Spectroscopic Factor</div>
+        <div class="expand">The S Factor (Not the Other One)</div>
+        <div class="boss">Spectroscopic factor. The number that connects reactions to structure. Macfarlane and French wrote the book on this. Classic. Absolute classic. Very beautiful number.</div>
+        <div class="real">The overlap between a parent and daughter nucleus wavefunction in a given single-particle configuration. Turns a measured stripping or pickup cross section into structure information. Model-dependent, debated, essential.</div>
+      </div>
+
+      <div class="entry" id="postprior">
+        <div class="term">Post / Prior</div>
+        <div class="expand">Two Ways to Write the Same Thing</div>
+        <div class="boss">Post and prior. Two forms. Different math. Same answer. If they disagree, somebody cut a corner. Usually it was the intern. Not me. I never cut corners. Never.</div>
+        <div class="real">The transition operator in a transfer amplitude can be written using the residual interaction in the final channel (post) or in the initial channel (prior). Exact post-prior equivalence holds only if the bound-state wave functions are exact; discrepancies measure approximation errors.</div>
+      </div>
+
+      <div class="entry" id="lane">
+        <div class="term">Lane Potential</div>
+        <div class="expand">Isospin in the Optical Potential</div>
+        <div class="boss">Tony Lane. Great guy. Took isospin, put it in the potential, connected (p,n) to elastic. One little term and suddenly everything makes sense. Beautiful. So beautiful.</div>
+        <div class="real">An isospin-dependent term in the nucleon-nucleus optical potential proportional to t · T (projectile isospin dotted into target isospin). Connects charge-exchange (p,n) reactions to isobaric analog states and to proton and neutron elastic scattering.</div>
+      </div>
+
+      <div class="entry" id="transfer">
+        <div class="term">Transfer Reaction</div>
+        <div class="expand">(d,p), (p,d), (d,n), (3He,d), ...</div>
+        <div class="boss">Transfer reactions. The classics. Take a nucleon off, put a nucleon on. Simple. Elegant. Tells you EVERYTHING about single-particle structure. Tremendous.</div>
+        <div class="real">A reaction in which one or a few nucleons are moved from projectile to target or vice versa, leaving the residual nucleus in a definite quantum state. The primary probe of single-particle structure near the Fermi surface.</div>
+      </div>
+
+      <div class="entry" id="knockout">
+        <div class="term">Knockout</div>
+        <div class="expand">Rip a Nucleon Off, Measure the Rest</div>
+        <div class="boss">Knockout reactions. You send in a fast projectile, you knock out a nucleon, you measure what is left. Fast, clean, beautiful. And Jeff Tostevin wrote the theory. Perfect.</div>
+        <div class="real">At intermediate and high energies, a single nucleon is removed from a fast projectile by the target. The residue momentum distribution carries the struck nucleon's orbital angular momentum; the cross section carries its occupation. The modern workhorse for spectroscopy of exotic nuclei.</div>
+      </div>
+
+      <div class="entry" id="breakup">
+        <div class="term">Breakup</div>
+        <div class="expand">The Projectile Falls Apart</div>
+        <div class="boss">Breakup. The projectile falls apart. Sounds bad. But it tells you the structure! The halo! The binding! A disaster that is actually information. Classic physics move.</div>
+        <div class="real">Dissociation of a weakly bound projectile (deuteron, 6He, 11Be, ...) in the field of a target. Elastic breakup keeps the fragments intact; Coulomb breakup at high energies is a clean probe of low-lying E1 strength in halo nuclei.</div>
+      </div>
+
+      <div class="entry" id="folded">
+        <div class="term">Folded Potential</div>
+        <div class="expand">Build a Potential From Below</div>
+        <div class="boss">Folded potential. Take the nucleon-nucleon interaction, fold it with the densities, out comes the nucleus-nucleus potential. Microscopic. Beautiful. Nobody folds better than us.</div>
+        <div class="real">Construct a nucleus-nucleus (or nucleon-nucleus) interaction by convolving a microscopic effective nucleon-nucleon interaction with the nuclear densities of one or both colliding nuclei. Single folding for nucleon projectiles; double folding for composite projectiles.</div>
+      </div>
+
+      <div class="entry" id="ws">
+        <div class="term">Woods-Saxon</div>
+        <div class="expand">The Shape Everyone Uses</div>
+        <div class="boss">Woods-Saxon. Simple formula. One over one plus exponential. Three parameters. Fits EVERYTHING. Amazing shape. The greatest shape in nuclear physics. Believe me.</div>
+        <div class="real">The functional form V(r) = -V₀ / [1 + exp((r - R)/a)]. Mimics a nuclear density: flat inside, diffuse edge. The default for optical model and bound-state potentials for six decades, for the simple reason that it just works.</div>
+      </div>
+
+      <div class="entry" id="smatrix">
+        <div class="term">S-Matrix</div>
+        <div class="expand">Scattering Matrix</div>
+        <div class="boss">S-matrix. The S stands for Scattering. Or for Spectacular. Or for So Great. All true. Connects incoming waves to outgoing waves. Everything else is downstream of this.</div>
+        <div class="real">The unitary operator connecting asymptotic in and out states of a scattering system. All observables (cross sections, phase shifts, polarizations) are built from matrix elements of S. The cleanest way to think about any reaction.</div>
+      </div>
+
+      <div class="entry" id="feshbach">
+        <div class="term">Feshbach Projection</div>
+        <div class="expand">Split the Hilbert Space</div>
+        <div class="boss">Feshbach. Took the optical model from a guess to a theorem. Split the Hilbert space. Project. Reduce. Beautiful move. Total mathematical perfection.</div>
+        <div class="real">Divide the full Hilbert space into a model space P and a complement Q; integrating out Q produces an effective Hamiltonian on P that is non-local, energy-dependent, and complex. The rigorous derivation of the optical potential and of the coupled-channels reduction.</div>
+      </div>
+
+      <div class="entry" id="formfactor">
+        <div class="term">Form Factor</div>
+        <div class="expand">The Overlap That Does the Work</div>
+        <div class="boss">Form factor. The overlap between initial and final. The heart of the transition. Without a good form factor, you got nothing. With a good form factor, you got everything. Simple.</div>
+        <div class="real">In a transfer amplitude, the overlap between the bound-state wave function of the transferred cluster in the projectile and in the residue, multiplied by the residual interaction. The ingredient into which all the nuclear structure information is packed.</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ============ OUTRO ============ -->
+  <section class="outro">
+    <h2>Learn The Words<br/>Win The Game</h2>
+    <p>Folks, if you can define these 18 words cleanly, you already know more direct reaction theory than most ab initio people. Believe me. The words are the map. The map is the territory. Go use it.</p>
+    <a class="btn" href="why.html">The Manifesto</a>
+    <a class="btn gold" href="legends.html">Hall of Fame</a>
+    <a class="btn" href="index.html">← Back To The Boss</a>
+  </section>
+
+  <footer>
+    <div class="site">vibeinscience.com · DAGA movement</div>
+    <div>Science knows no borders. Definitions know no mercy.</div>
+  </footer>
+
+</body>
+</html>
