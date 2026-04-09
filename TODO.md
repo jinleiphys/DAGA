@@ -30,7 +30,7 @@ Status as of 2026-04-09. Keep this file updated as things move.
 ## 🧰 Tier 2 — solid but more work
 
 - [ ] **Vibe Research Playbook** (`playbook.html`) — neutral-voice methodology page describing an end-to-end LLM-assisted direct-reaction paper workflow in 6 generic steps. Must not contain anything specific enough to identify the author.
-- [ ] **Coulomb barrier calculator** — small JS widget: input projectile + target, output barrier with a Boss-style tagline.
+- [x] **Coulomb barrier calculator** (`barrier.html`) — Z/A inputs, preset reactions, Boss commentary, formula box
 - [ ] **Papers We Love** — 10–15 curated classic direct-reaction papers with DOIs and short Boss-style blurbs.
 
 ## 🧪 Tier 3 — defer or skip
