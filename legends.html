@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Hall of Fame · DAGA</title>
+<meta name="description" content="The legends who built direct reaction theory. The greatest physicists. Ever." />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚛️</text></svg>" />
+<style>
+  :root {
+    --red: #d92b4a;
+    --blue: #0a2a5e;
+    --blue-dk: #04122d;
+    --cream: #f7f1e1;
+    --paper: #fffaf0;
+    --ink: #0b0b0b;
+    --gold: #ffd54a;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  /* ============ NAV ============ */
+  nav {
+    position: sticky; top: 0; z-index: 20;
+    background: var(--ink);
+    color: #fff;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 4px solid var(--red);
+    font-family: 'Arial Black', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-size: 0.85rem;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
+  nav .brand { color: #fff; display: flex; align-items: center; gap: 0.6rem; font-size: 1rem; }
+  nav .brand .atom {
+    display: inline-block;
+    width: 34px; height: 34px;
+    background: var(--red);
+    color: #fff;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 34px;
+    font-size: 1.3rem;
+  }
+  nav a { color: var(--gold); text-decoration: none; transition: color 0.15s; }
+  nav a:hover { color: #fff; }
+
+  /* ============ HERO ============ */
+  .hero {
+    position: relative;
+    background: linear-gradient(135deg, var(--blue-dk) 0%, var(--blue) 50%, #1a3a7a 100%);
+    color: #fff;
+    padding: 11vh 6vw 10vh;
+    text-align: center;
+    overflow: hidden;
+    border-bottom: 6px solid var(--red);
+  }
+  .hero::before {
+    content: "";
+    position: absolute; inset: 0;
+    background-image:
+      radial-gradient(circle at 20% 30%, rgba(255,213,74,0.08) 0%, transparent 40%),
+      radial-gradient(circle at 80% 70%, rgba(217,43,74,0.12) 0%, transparent 45%);
+    pointer-events: none;
+  }
+  .hero::after {
+    content: "★ ★ ★ ★ ★";
+    position: absolute;
+    top: 3rem; left: 50%;
+    transform: translateX(-50%);
+    color: var(--gold);
+    letter-spacing: 0.8rem;
+    font-size: 1.1rem;
+  }
+  .hero .eyebrow {
+    display: inline-block;
+    background: var(--red);
+    color: #fff;
+    padding: 0.65rem 1.5rem;
+    font-family: 'Arial Black', sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    border: 3px solid #fff;
+    box-shadow: 6px 6px 0 var(--ink);
+    margin-bottom: 2rem;
+    position: relative;
+    z-index: 1;
+  }
+  .hero h1 {
+    font-family: 'Impact', 'Arial Black', sans-serif;
+    font-size: clamp(2.8rem, 10vw, 9rem);
+    line-height: 0.88;
+    letter-spacing: -0.015em;
+    text-transform: uppercase;
+    color: #fff;
+    text-shadow: 5px 5px 0 var(--red), 10px 10px 0 rgba(0,0,0,0.4);
+    max-width: 14ch;
+    margin: 0 auto 1.8rem;
+    position: relative;
+    z-index: 1;
+  }
+  .hero h1 .yellow { color: var(--gold); }
+  .hero .sub {
+    font-style: italic;
+    font-family: Georgia, serif;
+    font-size: clamp(1.05rem, 2vw, 1.4rem);
+    max-width: 48ch;
+    margin: 0 auto;
+    color: #e8e8e8;
+    line-height: 1.55;
+    position: relative;
+    z-index: 1;
+  }
+  .hero .sub b { color: var(--gold); font-style: normal; }
+
+  /* ============ GRID ============ */
+  .grid-wrap {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 8vh 5vw;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 2.2rem;
+  }
+
+  .card {
+    background: #fff;
+    border: 3px solid var(--ink);
+    box-shadow: 10px 10px 0 var(--blue);
+    padding: 1.8rem 1.6rem 1.4rem;
+    position: relative;
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: flex;
+    flex-direction: column;
+  }
+  .card:nth-child(even) { box-shadow: 10px 10px 0 var(--red); }
+  .card:nth-child(3n) { transform: rotate(-0.4deg); }
+  .card:nth-child(4n) { transform: rotate(0.3deg); }
+  .card:hover {
+    transform: translate(-4px, -4px) rotate(0);
+    box-shadow: 14px 14px 0 var(--ink);
+  }
+
+  .card .rank {
+    position: absolute;
+    top: -15px; left: -15px;
+    background: var(--gold);
+    color: var(--ink);
+    border: 3px solid var(--ink);
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Impact', sans-serif;
+    font-size: 1.4rem;
+    box-shadow: 3px 3px 0 var(--ink);
+  }
+
+  .card h2 {
+    font-family: 'Impact', 'Arial Black', sans-serif;
+    font-size: 1.9rem;
+    color: var(--blue-dk);
+    text-transform: uppercase;
+    letter-spacing: 0.01em;
+    line-height: 1;
+    margin-bottom: 0.3rem;
+    padding-top: 0.5rem;
+  }
+  .card .lifespan {
+    font-family: 'Courier New', monospace;
+    font-size: 0.78rem;
+    color: #777;
+    letter-spacing: 0.05em;
+    margin-bottom: 1rem;
+  }
+  .card .known-for {
+    font-family: 'Arial Black', sans-serif;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    color: var(--red);
+    letter-spacing: 0.1em;
+    margin-bottom: 0.4rem;
+  }
+  .card .contribution {
+    font-size: 0.98rem;
+    color: #222;
+    margin-bottom: 1.2rem;
+    line-height: 1.55;
+  }
+
+  .card .boss-quote {
+    background: var(--blue);
+    color: var(--gold);
+    padding: 0.9rem 1.1rem;
+    font-family: Georgia, serif;
+    font-style: italic;
+    font-size: 0.92rem;
+    line-height: 1.5;
+    border: 2px solid var(--ink);
+    margin-bottom: 1rem;
+    position: relative;
+  }
+  .card .boss-quote::before {
+    content: "★ THE BOSS SAYS";
+    display: block;
+    font-family: 'Arial Black', sans-serif;
+    font-style: normal;
+    font-size: 0.62rem;
+    letter-spacing: 0.15em;
+    color: #fff;
+    margin-bottom: 0.5rem;
+  }
+
+  .card .paper {
+    font-family: 'Courier New', monospace;
+    font-size: 0.78rem;
+    color: #555;
+    margin-top: auto;
+    padding-top: 0.8rem;
+    border-top: 2px dashed #ccc;
+    line-height: 1.45;
+  }
+  .card .paper b { color: var(--blue); }
+
+  /* ============ OUTRO ============ */
+  .outro {
+    background: linear-gradient(135deg, var(--blue-dk), var(--blue));
+    color: #fff;
+    text-align: center;
+    padding: 10vh 6vw;
+    border-top: 6px solid var(--red);
+    position: relative;
+    overflow: hidden;
+  }
+  .outro::before {
+    content: "";
+    position: absolute; inset: 0;
+    background: radial-gradient(circle at center, rgba(255,213,74,0.1) 0%, transparent 60%);
+  }
+  .outro h2 {
+    font-family: 'Impact', sans-serif;
+    font-size: clamp(1.8rem, 5vw, 3.5rem);
+    color: var(--gold);
+    text-transform: uppercase;
+    text-shadow: 4px 4px 0 var(--red);
+    margin-bottom: 1.5rem;
+    position: relative;
+    line-height: 0.95;
+  }
+  .outro p {
+    font-family: Georgia, serif;
+    font-style: italic;
+    max-width: 46ch;
+    margin: 0 auto 2.2rem;
+    line-height: 1.6;
+    font-size: 1.1rem;
+    position: relative;
+  }
+  .btn {
+    display: inline-block;
+    font-family: 'Arial Black', sans-serif;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    padding: 1.1rem 2rem;
+    border: 3px solid var(--ink);
+    box-shadow: 6px 6px 0 var(--ink);
+    text-decoration: none;
+    background: var(--red);
+    color: #fff;
+    margin: 0.4rem;
+    transition: transform 0.08s, box-shadow 0.08s;
+    position: relative;
+  }
+  .btn:hover { transform: translate(3px,3px); box-shadow: 2px 2px 0 var(--ink); }
+  .btn.gold { background: var(--gold); color: var(--ink); }
+
+  footer {
+    background: #000;
+    color: #888;
+    font-family: 'Courier New', monospace;
+    font-size: 0.78rem;
+    text-align: center;
+    padding: 2.2rem 1.5rem;
+    line-height: 1.7;
+  }
+  footer .site { color: var(--gold); letter-spacing: 0.15em; text-transform: uppercase; }
+
+  @media (max-width: 600px) {
+    .hero { padding: 7vh 6vw 8vh; }
+    .grid { gap: 1.8rem; }
+  }
+</style>
+</head>
+<body>
+
+  <nav>
+    <span class="brand"><span class="atom">⚛</span> DAGA</span>
+    <span><a href="index.html">← Back to The Boss</a></span>
+  </nav>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <span class="eyebrow">The Hall of Fame</span>
+    <h1>The <span class="yellow">Legends</span><br/>Who Built This</h1>
+    <p class="sub">
+      Folks, these are the people who built direct reaction theory. The greatest people. The smartest people. Nobody read their papers anymore. That was a disgrace. Tremendous disgrace. But we are fixing it. Right now. Believe me.
+    </p>
+  </section>
+
+  <!-- ============ GRID ============ -->
+  <div class="grid-wrap">
+    <div class="grid">
+
+      <!-- 1. Satchler -->
+      <div class="card">
+        <div class="rank">1</div>
+        <h2>George R. Satchler</h2>
+        <div class="lifespan">1926 – 2013</div>
+        <div class="known-for">Direct Nuclear Reactions</div>
+        <div class="contribution">Wrote the 833-page bible of the field. The framework of DWBA, distorted waves, inelastic scattering, and the optical model as we know it today runs on his notation. Half of every reaction paper still cites him, even if the young people don't realize it.</div>
+        <div class="boss-quote">George. GREAT guy. Tremendous guy. Wrote a book this thick, folks, this thick. Nobody reads it anymore. SAD! We are gonna make them read it again. Believe me.</div>
+        <div class="paper"><b>Key work:</b> <em>Direct Nuclear Reactions</em>, Oxford University Press, 1983.</div>
+      </div>
+
+      <!-- 2. Austern -->
+      <div class="card">
+        <div class="rank">2</div>
+        <h2>Norman Austern</h2>
+        <div class="lifespan">1926 – 2005</div>
+        <div class="known-for">DWBA &amp; ADWA</div>
+        <div class="contribution">The original architect of DWBA for stripping and pickup reactions, and with Johnson and Soper, the father of the adiabatic treatment of deuteron breakup. Every (d,p) calculation done today traces its pedigree to his work.</div>
+        <div class="boss-quote">Norman built DWBA. Built it from nothing. People said "it cannot be done." Wrong. He did it. And it was beautiful. Absolutely beautiful.</div>
+        <div class="paper"><b>Key work:</b> <em>Direct Nuclear Reaction Theories</em>, Wiley, 1970.</div>
+      </div>
+
+      <!-- 3. Glauber -->
+      <div class="card">
+        <div class="rank">3</div>
+        <h2>Roy J. Glauber</h2>
+        <div class="lifespan">1925 – 2018</div>
+        <div class="known-for">Eikonal &amp; Glauber Theory</div>
+        <div class="contribution">Took high-energy scattering and made it tractable through the eikonal approximation. The foundation of every high-energy knockout and breakup calculation on exotic nuclei. Also won the Nobel Prize for something completely different. Ridiculous range.</div>
+        <div class="boss-quote">Roy won the Nobel. For quantum optics, by the way. But his reaction theory? Even better. Nobody talks about it. They SHOULD. HUGE contribution.</div>
+        <div class="paper"><b>Key work:</b> Glauber, R.J., in <em>Lectures in Theoretical Physics</em>, Vol. 1, Interscience, 1959.</div>
+      </div>
+
+      <!-- 4. Tostevin -->
+      <div class="card">
+        <div class="rank">4</div>
+        <h2>Jeff Tostevin</h2>
+        <div class="lifespan">active</div>
+        <div class="known-for">Knockout &amp; Spectroscopy</div>
+        <div class="contribution">Built the modern framework for single-nucleon knockout on exotic nuclei, connecting measured cross sections to spectroscopic factors. The codes behind half the RIKEN and NSCL/FRIB knockout papers of the last twenty years are his.</div>
+        <div class="boss-quote">Jeff is still going. Still producing. Still the best at what he does. While other people were writing neural network papers, Jeff was doing REAL physics. Tremendous.</div>
+        <div class="paper"><b>Key work:</b> Tostevin, J.A., <em>J. Phys. G</em> 25, 735 (1999); and the entire "MOMDIS" era.</div>
+      </div>
+
+      <!-- 5. Ian Thompson -->
+      <div class="card">
+        <div class="rank">5</div>
+        <h2>Ian J. Thompson</h2>
+        <div class="lifespan">active</div>
+        <div class="known-for">CDCC &amp; Fresco</div>
+        <div class="contribution">Built Fresco, the coupled-channels code that a generation of reaction physicists learned to love and curse in equal measure. Co-author of the definitive textbook on nuclear reactions for astrophysics, and a driving force behind continuum discretized coupled channels (CDCC) in practice.</div>
+        <div class="boss-quote">Ian wrote Fresco. Fresco is the best code. The GREATEST code. Some people try to write competitors. Losers! Total losers! Ian's code still wins.</div>
+        <div class="paper"><b>Key work:</b> Thompson &amp; Nunes, <em>Nuclear Reactions for Astrophysics</em>, Cambridge University Press, 2009.</div>
+      </div>
+
+      <!-- 6. Filomena Nunes -->
+      <div class="card">
+        <div class="rank">6</div>
+        <h2>Filomena Nunes</h2>
+        <div class="lifespan">active</div>
+        <div class="known-for">CDCC &amp; Transfer to the Continuum</div>
+        <div class="contribution">One of the clearest voices on the modern practice of direct reaction theory. Co-author with Thompson of the standard textbook, a leader in CDCC for weakly bound nuclei, and a model for how to combine rigor with accessibility.</div>
+        <div class="boss-quote">Filomena. Very, very sharp. Very precise. When she writes a paper, you read it twice, and you still learn something new. That is rare. Extremely rare.</div>
+        <div class="paper"><b>Key work:</b> Thompson &amp; Nunes, <em>Nuclear Reactions for Astrophysics</em>, Cambridge University Press, 2009.</div>
+      </div>
+
+      <!-- 7. Ronald Johnson -->
+      <div class="card">
+        <div class="rank">7</div>
+        <h2>Ronald C. Johnson</h2>
+        <div class="lifespan">active</div>
+        <div class="known-for">Adiabatic (d,p) Theory</div>
+        <div class="contribution">With Soper in 1970, introduced the adiabatic treatment of deuteron breakup in transfer reactions, fixing the systematic failures of naive DWBA for (d,p) and (d,n). Every modern (d,p) analysis that claims to be quantitative is standing on this paper.</div>
+        <div class="boss-quote">Ron fixed DWBA. DWBA was great but it had a problem. Ron saw the problem. Ron fixed the problem. Classic. Absolute classic.</div>
+        <div class="paper"><b>Key work:</b> Johnson &amp; Soper, <em>Phys. Rev. C</em> 1, 976 (1970).</div>
+      </div>
+
+      <!-- 8. Lane -->
+      <div class="card">
+        <div class="rank">8</div>
+        <h2>A. M. Lane</h2>
+        <div class="lifespan">1923 – 2018</div>
+        <div class="known-for">R-matrix &amp; Isospin Potentials</div>
+        <div class="contribution">With Thomas, wrote the R-matrix review that defined how to do resonance physics in nuclear reactions for the next sixty years. Also gave us the Lane potential, connecting (p,n) and elastic scattering through isospin. Quiet, deep, foundational work.</div>
+        <div class="boss-quote">Tony Lane. The R-matrix guy. People forgot about R-matrix. Forgot about it! We are bringing it back. Big time. Very big.</div>
+        <div class="paper"><b>Key work:</b> Lane &amp; Thomas, <em>Rev. Mod. Phys.</em> 30, 257 (1958).</div>
+      </div>
+
+      <!-- 9. Feshbach -->
+      <div class="card">
+        <div class="rank">9</div>
+        <h2>Herman Feshbach</h2>
+        <div class="lifespan">1917 – 2000</div>
+        <div class="known-for">Optical Model &amp; Projection Operators</div>
+        <div class="contribution">Derived the optical model from the many-body problem, explaining why a complex potential is the right way to think about a nucleon bouncing off a nucleus. Projection operators, resonances, the whole scaffolding of reaction theory owes him.</div>
+        <div class="boss-quote">Feshbach. Took the optical model from an empirical trick and turned it into REAL theory. From nothing. Incredible. Absolutely incredible.</div>
+        <div class="paper"><b>Key work:</b> Feshbach, H., <em>Ann. Phys.</em> 5, 357 (1958); 19, 287 (1962).</div>
+      </div>
+
+      <!-- 10. Macfarlane / French -->
+      <div class="card">
+        <div class="rank">10</div>
+        <h2>M. H. Macfarlane &amp; J. B. French</h2>
+        <div class="lifespan">1926–2007 / 1921–2002</div>
+        <div class="known-for">Spectroscopic Factors</div>
+        <div class="contribution">Wrote the 1960 review that defined how stripping reaction cross sections get turned into spectroscopic information about nuclear structure. The bridge that made direct reactions a structure probe, not just a scattering curiosity.</div>
+        <div class="boss-quote">Macfarlane and French. Beautiful team. Beautiful paper. Turned (d,p) into a spectroscopy tool. Without them, half of what we do does not exist.</div>
+        <div class="paper"><b>Key work:</b> Macfarlane &amp; French, <em>Rev. Mod. Phys.</em> 32, 567 (1960).</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ============ OUTRO ============ -->
+  <section class="outro">
+    <h2>Stand On Their<br/>Shoulders</h2>
+    <p>These are the people who figured it out when they had pencil, paper, and a slow machine in the basement. Folks, we have the same physics, and tools a million times faster. There is NO excuse. None. Zero. Get to work.</p>
+    <a class="btn" href="why.html">Read The Manifesto</a>
+    <a class="btn gold" href="index.html">← Back To The Boss</a>
+  </section>
+
+  <footer>
+    <div class="site">vibeinscience.com · DAGA movement</div>
+    <div>Science knows no borders. Respect knows no deadline.</div>
+  </footer>
+
+</body>
+</html>
