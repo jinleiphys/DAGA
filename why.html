@@ -240,6 +240,30 @@
   }
   .truth-post p + p { margin-top: 0.8rem; }
 
+  /* ============ CHART ============ */
+  .chart-wrap {
+    background: var(--paper);
+    border: 3px solid var(--ink);
+    box-shadow: 10px 10px 0 var(--red);
+    padding: 1.2rem;
+    margin: 2.5rem 0;
+    position: relative;
+    z-index: 1;
+  }
+  .chart-wrap img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  .chart-wrap figcaption {
+    font-family: 'Courier New', monospace;
+    font-size: 0.8rem;
+    color: #666;
+    margin-top: 0.8rem;
+    line-height: 1.5;
+    text-align: center;
+  }
+
   /* ============ FOREIGN QUOTE ============ */
   .quote-box {
     background: var(--paper);
@@ -485,7 +509,18 @@
 
       <p>But here's the thing. Here's the thing nobody tells you. <strong>Direct reactions were not finished.</strong> They were SLOW. That's it. That's the whole story. Slow to code. Slow to compute. Slow to fit. Slow to write up. A single (d,p) paper could take a postdoc a whole YEAR. A year! For one paper!</p>
 
-      <p>The physics was perfect. The physics was beautiful. The bottleneck was <em>us</em>. The humans. Very sad. Very, very sad. But also, folks — and this is the important part — <strong>fixable.</strong></p>
+      <p>The physics was perfect. The physics was beautiful. The bottleneck was <em>us</em>. The humans. Very sad. Very, very sad. But also, folks, and this is the important part, <strong>fixable.</strong></p>
+
+      <p>Don't take my word for it. Look at the data. LOOK AT IT, folks:</p>
+
+      <figure class="chart-wrap">
+        <img src="decline.svg" alt="Publication trends 1970-2025: DWBA, transfer reaction, optical model vs. shell model, density functional, ab initio" />
+        <figcaption>INSPIRE-HEP publication counts, 3-year rolling average. Red lines = direct reaction methods. Blue/purple lines = structure methods. The crossover is not subtle.</figcaption>
+      </figure>
+
+      <p>You see that red line? DWBA. Over 120 papers a year in the 70s. The BEST decade. Then 1984. Something happened. It fell off a cliff. A CLIFF, folks. Down to 10, 20 papers. Meanwhile, look at that dark blue line. Shell model. Started at 80, 90. Now it's pushing 300. THREE HUNDRED. And density functional? Zero in 1970. Now over 150. Ab initio? Didn't EXIST until 2002. Now it's at 40 and climbing.</p>
+
+      <p>The data doesn't lie, folks. FAKE NEWS lies. The data does NOT. And the data says: direct reactions lost market share. Not because the physics was wrong. Because they were <strong>slow</strong>, and the other approaches were getting more people, more money, more compute.</p>
 
       <div class="truth-post">
         <p>They said direct reactions were dead. WRONG. So wrong. They weren't dead, folks. They were SLOW. Very slow. Tremendously slow. And nobody fixed it. For years. YEARS. Until now. Believe me.</p>
