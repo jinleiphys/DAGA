@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Why DAGA · The Manifesto</title>
+<meta name="description" content="Why direct nuclear reactions can be made great again: the vibe research thesis." />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚛️</text></svg>" />
+<style>
+  :root {
+    --red: #b31942;
+    --blue: #0a3161;
+    --cream: #f5f0e1;
+    --paper: #fffaf0;
+    --ink: #0b0b0b;
+    --gold: #ffd700;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: Georgia, 'Times New Roman', serif;
+    background: var(--cream);
+    color: var(--ink);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+  .bg {
+    position: fixed; inset: 0; z-index: -1;
+    background: repeating-linear-gradient(180deg, var(--cream) 0 80px, rgba(179,25,66,0.05) 80px 160px);
+  }
+
+  /* ============ NAV ============ */
+  nav {
+    position: sticky; top: 0; z-index: 10;
+    background: var(--ink);
+    color: #fff;
+    padding: 0.9rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 3px solid var(--red);
+    font-family: 'Arial Black', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.85rem;
+  }
+  nav a { color: var(--gold); text-decoration: none; }
+  nav a:hover { color: #fff; }
+  nav .brand { color: #fff; }
+  nav .brand b { color: var(--red); }
+
+  /* ============ HEADER ============ */
+  header.page-head {
+    text-align: center;
+    padding: 10vh 6vw 6vh;
+  }
+  .eyebrow {
+    display: inline-block;
+    background: var(--red);
+    color: #fff;
+    padding: 0.55rem 1.3rem;
+    font-family: 'Arial Black', sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    border: 3px solid var(--ink);
+    box-shadow: 6px 6px 0 var(--ink);
+    margin-bottom: 2rem;
+  }
+  h1 {
+    font-family: 'Impact', 'Arial Black', sans-serif;
+    font-size: clamp(2.4rem, 7vw, 6rem);
+    line-height: 0.95;
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+    color: var(--blue);
+    text-shadow: 4px 4px 0 var(--red), 7px 7px 0 var(--ink);
+    max-width: 18ch;
+    margin: 0 auto 1.5rem;
+  }
+  header.page-head .sub {
+    font-style: italic;
+    font-size: clamp(1.05rem, 2vw, 1.4rem);
+    max-width: 50ch;
+    margin: 0 auto;
+    color: #333;
+  }
+
+  /* ============ ARTICLE ============ */
+  article {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 4vh 6vw 10vh;
+    font-size: clamp(1rem, 1.3vw, 1.15rem);
+  }
+  article h2 {
+    font-family: 'Impact', 'Arial Black', sans-serif;
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    text-transform: uppercase;
+    color: var(--red);
+    text-shadow: 3px 3px 0 var(--ink);
+    margin: 4rem 0 1.5rem;
+    letter-spacing: 0.01em;
+    border-bottom: 4px solid var(--ink);
+    padding-bottom: 0.5rem;
+  }
+  article h2:first-of-type { margin-top: 1rem; }
+  article h3 {
+    font-family: 'Arial Black', sans-serif;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    color: var(--blue);
+    margin: 2rem 0 0.6rem;
+    letter-spacing: 0.05em;
+  }
+  article p { margin-bottom: 1.2rem; }
+  article strong { color: var(--red); }
+  article em { color: var(--blue); font-style: italic; }
+  article a { color: var(--blue); text-decoration: underline; text-decoration-thickness: 2px; }
+  article a:hover { background: var(--gold); }
+
+  .pullquote {
+    border-left: 6px solid var(--red);
+    background: var(--paper);
+    padding: 1.3rem 1.8rem;
+    margin: 2rem 0;
+    font-style: italic;
+    font-size: 1.08rem;
+    box-shadow: 6px 6px 0 var(--ink);
+  }
+  .pullquote cite {
+    display: block;
+    margin-top: 0.8rem;
+    font-family: 'Arial Black', sans-serif;
+    font-style: normal;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--blue);
+  }
+
+  .stat-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1.2rem;
+    margin: 2rem 0;
+  }
+  .stat {
+    background: #fff;
+    border: 3px solid var(--ink);
+    box-shadow: 6px 6px 0 var(--blue);
+    padding: 1.2rem;
+    text-align: center;
+  }
+  .stat .num {
+    font-family: 'Impact', sans-serif;
+    font-size: 2.4rem;
+    color: var(--red);
+    line-height: 1;
+    display: block;
+  }
+  .stat .lbl {
+    font-family: 'Arial Black', sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--blue);
+    margin-top: 0.4rem;
+    display: block;
+  }
+
+  .boss-say {
+    background: var(--blue);
+    color: var(--gold);
+    padding: 1.5rem 1.8rem;
+    margin: 2rem 0;
+    border: 3px solid var(--ink);
+    box-shadow: 8px 8px 0 var(--red);
+    font-family: Georgia, serif;
+    font-style: italic;
+    font-size: 1.05rem;
+    line-height: 1.6;
+  }
+  .boss-say::before {
+    content: "★ THE BOSS SAYS ★";
+    display: block;
+    font-family: 'Arial Black', sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    color: #fff;
+    font-style: normal;
+    margin-bottom: 0.8rem;
+  }
+
+  .refs {
+    background: #fff;
+    border: 3px solid var(--ink);
+    padding: 1.5rem 1.8rem;
+    margin-top: 3rem;
+    font-family: 'Courier New', monospace;
+    font-size: 0.85rem;
+    line-height: 1.6;
+  }
+  .refs h3 {
+    font-family: 'Arial Black', sans-serif;
+    color: var(--red);
+    margin: 0 0 1rem;
+    font-size: 0.9rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  .refs ol { padding-left: 1.3rem; }
+  .refs li { margin-bottom: 0.6rem; }
+
+  /* ============ BIG CTA ============ */
+  .final-cta {
+    text-align: center;
+    padding: 8vh 6vw;
+    background: var(--blue);
+    color: #fff;
+    border-top: 4px solid var(--ink);
+    margin-top: 4rem;
+  }
+  .final-cta h2 {
+    font-family: 'Impact', sans-serif;
+    font-size: clamp(1.8rem, 5vw, 3rem);
+    color: var(--gold);
+    text-transform: uppercase;
+    text-shadow: 3px 3px 0 var(--red);
+    margin-bottom: 1.2rem;
+  }
+  .final-cta p {
+    font-style: italic;
+    max-width: 46ch;
+    margin: 0 auto 2rem;
+    line-height: 1.6;
+  }
+  .btn {
+    display: inline-block;
+    font-family: 'Arial Black', sans-serif;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 1rem 1.8rem;
+    border: 3px solid var(--ink);
+    box-shadow: 6px 6px 0 var(--ink);
+    text-decoration: none;
+    background: var(--red);
+    color: #fff;
+    transition: transform 0.08s, box-shadow 0.08s;
+    margin: 0.5rem;
+  }
+  .btn:hover { transform: translate(2px,2px); box-shadow: 3px 3px 0 var(--ink); }
+  .btn.gold { background: var(--gold); color: var(--ink); }
+
+  footer {
+    background: var(--ink);
+    color: #aaa;
+    font-family: 'Courier New', monospace;
+    font-size: 0.78rem;
+    text-align: center;
+    padding: 2rem 1.5rem;
+    line-height: 1.6;
+  }
+  footer .site { color: var(--gold); letter-spacing: 0.15em; text-transform: uppercase; }
+</style>
+</head>
+<body>
+  <div class="bg" aria-hidden="true"></div>
+
+  <nav>
+    <span class="brand"><b>⚛</b>&nbsp;DAGA</span>
+    <span><a href="index.html">← Back to The Boss</a></span>
+  </nav>
+
+  <header class="page-head">
+    <span class="eyebrow">The Manifesto</span>
+    <h1>Why DAGA<br/>Is Possible<br/>Now</h1>
+    <p class="sub">Direct reactions didn't die. They were waiting for the right tool. That tool has arrived, and it's called <em>vibe research</em>.</p>
+  </header>
+
+  <article>
+
+    <h2>I. The Decline Nobody Wants To Talk About</h2>
+
+    <p>For half a century, direct nuclear reactions were the main road into nuclear structure. (d,p), (p,d), (d,n), (α,α′), (p,p′), knockout, transfer, breakup. Every new facility ran them. Every generation of students learned DWBA before they learned anything else. The theoretical framework, built by Austern, Satchler, Glauber, Tostevin, Thompson, and many others, was beautiful and it worked.</p>
+
+    <p>Then something changed. Starting around 2015, and accelerating hard after 2020, the field quietly deflated. <em>Ab initio</em> calculations, shell model Monte Carlo, machine-learned emulators, and nuclear density functional theory absorbed most of the attention, most of the students, and most of the funding. Direct reactions became the thing in the back of the textbook. A classical subject. A finished chapter.</p>
+
+    <p>But direct reactions were not finished. They were <strong>slow</strong>. Slow to code. Slow to compute. Slow to fit. Slow to write up. A single (d,p) paper, done properly, could take a postdoc an entire year. The physics was fine. The bottleneck was <em>human throughput</em>.</p>
+
+    <div class="boss-say">
+      They said direct reactions were dead. WRONG. They were slow. Very slow. Tremendously slow. And nobody fixed it. Until now. Believe me.
+    </div>
+
+    <h2>II. What Changed In 2025</h2>
+
+    <p>In February 2025, Andrej Karpathy posted a short message on X that, in retrospect, marked the start of something:</p>
+
+    <div class="pullquote">
+      There's a new kind of coding I call "vibe coding", where you fully give in to the vibes, embrace exponentials, and forget that the code even exists. It's possible because the LLMs are getting too good.
+      <cite>Andrej Karpathy, February 2025</cite>
+    </div>
+
+    <p>Within months, the term crossed into popular use. Cursor passed one million users. Replit reported 40 million. Lovable users generated over 10 million projects. A formal survey on arXiv (<a href="https://arxiv.org/abs/2510.12399">2510.12399</a>) cast vibe coding as a Constrained Markov Decision Process and identified five distinct modes of practice.</p>
+
+    <p>The critics came quickly, and they were not wrong. Roughly <strong>45%</strong> of AI-generated code has been found to contain OWASP Top 10 vulnerabilities. Analysts have warned of trillion-dollar technical debt by 2027. A December 2025 study found that AI-coauthored code contained about 1.7 times more major issues than human-written code. Andrew Ng pushed back publicly on the phrase itself, arguing that good LLM-assisted engineering is <em>concentrated</em>, not a "vibe."</p>
+
+    <div class="stat-row">
+      <div class="stat"><span class="num">45%</span><span class="lbl">AI Code With OWASP Vulns</span></div>
+      <div class="stat"><span class="num">1.7×</span><span class="lbl">Major Issues vs. Human</span></div>
+      <div class="stat"><span class="num">$1.5T</span><span class="lbl">Projected Tech Debt 2027</span></div>
+    </div>
+
+    <p>These are real concerns. They are also, crucially, <strong>concerns about shipping production software to millions of users</strong>. A reaction code that reproduces measured (d,p) angular distributions is not production software. It does not need to pass a pentest. It needs to be <em>right</em>, and its rightness is checked against <em>data</em>. This distinction matters more than it first appears.</p>
+
+    <h2>III. Vibe Research: The Real Name For What We Do</h2>
+
+    <p>A few months after vibe coding went viral, the idea was picked up by researchers. The clearest statement came from a 2026 arXiv manifesto titled <a href="https://arxiv.org/abs/2604.00945"><em>A Visionary Look at Vibe Researching</em></a>, which extends Karpathy's framing from code to science:</p>
+
+    <div class="pullquote">
+      Vibe researching extends vibe coding logic to the research setting, where the researcher supplies the question, domain intuition, and critical eye, while LLM-based agents handle labor-intensive execution including literature search and synthesis, method implementation, experiments, data processing, figure generation, and text drafting.
+      <cite>Feng &amp; Liu et al., arXiv:2604.00945</cite>
+    </div>
+
+    <p>The essential move is this: the <strong>human stays in the loop as the judge of every step</strong>. It is explicitly <em>not</em> Agent Laboratory. It is not a fire-and-forget research agent that autonomously produces papers while the scientist sleeps. The scientist decides what question to ask, when to invoke the LLM, which drafts are acceptable, which calculations to trust. The LLM does the labor. The human does the science.</p>
+
+    <p>This is the opposite of the "hallucinated paper" scare. The danger of LLMs in science is real, but it lives on the axis of <em>autonomy</em>, not the axis of <em>assistance</em>. A well-run vibe research loop is safer than a naive one-shot paper generator by a wide margin, because a domain expert is checking every intermediate output against physical intuition and against data.</p>
+
+    <h2>IV. Why This Changes Direct Reactions Specifically</h2>
+
+    <p>Every bottleneck that killed direct reactions is a <strong>human throughput bottleneck</strong>. Not a physics bottleneck. Consider what a typical direct reaction paper requires:</p>
+
+    <h3>A. Code</h3>
+    <p>Writing Fresco input decks, parsing output, building post-processing pipelines in Python, getting error bars right. For a trained LLM collaborator, this is a solved problem. Not a 10% speedup. A <em>10× speedup</em>.</p>
+
+    <h3>B. Literature Synthesis</h3>
+    <p>Finding every prior (d,p) measurement on a given nucleus at a given energy. Comparing normalizations. Tracking down the original S-factor extractions. Work that used to take a postdoc two weeks now takes an afternoon.</p>
+
+    <h3>C. Derivations and Algebra</h3>
+    <p>Adiabatic expansions, angular momentum algebra, recoupling coefficients, frame transformations. Tedious, error-prone, and exactly where LLMs with symbolic tooling shine as collaborators.</p>
+
+    <h3>D. Figures and Drafts</h3>
+    <p>The <em>last mile</em> of a paper is often half the total work: polishing figures, shaping prose, answering referees. This is where LLMs are most unambiguously useful and least controversial.</p>
+
+    <p>None of these steps involves "the LLM deciding the physics." The physics is still decided by the human. What vibe research removes is the <strong>friction between having a physics idea and seeing whether it works</strong>. For a subfield whose theoretical framework has been settled for decades and whose bottleneck was purely human throughput, removing that friction is not a small improvement. It is the whole game.</p>
+
+    <div class="boss-say">
+      DWBA. ADWA. CDCC. R-matrix. The classics. All tremendous. All beautiful. And now, with vibe research, fast. Very fast. Faster than anyone has ever seen. People are talking about it.
+    </div>
+
+    <h2>V. The Opportunity</h2>
+
+    <p>As of early 2026, the nuclear reaction community has not yet organized around any of this. There are no shared prompt libraries for (d,p) calculations. There are no community benchmarks for LLM-assisted derivations in reaction theory. No journal in nuclear physics has published clear guidance on LLM disclosure beyond boilerplate inherited from the broader APS statement. No case studies have been published demonstrating a full LLM-assisted reaction paper pipeline end to end.</p>
+
+    <p>This is the situation that a manifesto is supposed to describe. A mature theoretical framework. A tool that turns out to fit the framework like a glove. A community that has not yet noticed.</p>
+
+    <p>That is why DAGA is possible now. Not because someone invented a new theory. Not because an accelerator opened. Because for the first time, a single physicist with good judgment, a classical textbook, and a good LLM can sustain the throughput of a small group.</p>
+
+    <div class="boss-say">
+      We're gonna make direct reactions so great, so tremendous, so beautiful, the textbook people are gonna look at it and they're gonna say: Professor, how did you do it? How did you do so much? And we're gonna tell them: vibe research. It's the future. Believe me.
+    </div>
+
+    <h2>VI. What This Site Is</h2>
+
+    <p>DAGA is a parody on the outside and a position paper on the inside. The slogans are jokes. The thesis is not. If you are a nuclear physicist who still loves the direct reaction mechanism, who has a drawer full of half-finished ideas, who has told yourself for years that you simply do not have time to write them up, this site is telling you something specific:</p>
+
+    <p><strong>You now have time. Start.</strong></p>
+
+    <div class="refs">
+      <h3>References</h3>
+      <ol>
+        <li>Karpathy, A. Original "vibe coding" post, X, Feb 2025. <a href="https://x.com/karpathy/status/1886192184808149383">x.com/karpathy/status/1886192184808149383</a></li>
+        <li>Feng, Y., Liu, Y. et al. <em>A Visionary Look at Vibe Researching.</em> arXiv:2604.00945. <a href="https://arxiv.org/abs/2604.00945">arxiv.org/abs/2604.00945</a></li>
+        <li>Zhang et al. <em>A Survey of Vibe Coding with Large Language Models.</em> arXiv:2510.12399. <a href="https://arxiv.org/abs/2510.12399">arxiv.org/abs/2510.12399</a></li>
+        <li>Bertina, A. <em>Vibe-Research instead of Deep-Research.</em> Medium, 2025.</li>
+        <li>Towards Data Science. <em>The Reality of Vibe Coding: AI Agents and the Security Debt Crisis.</em> 2025.</li>
+        <li>Salesforce Ben. <em>2026 Predictions: The Year of Technical Debt.</em></li>
+        <li>ICLR 2026 LLM Policy. <a href="https://blog.iclr.cc/2025/08/26/policies-on-large-language-model-usage-at-iclr-2026/">blog.iclr.cc/2025/08/26</a></li>
+      </ol>
+    </div>
+
+  </article>
+
+  <section class="final-cta">
+    <h2>The Movement Needs You</h2>
+    <p>If the thesis above resonates, the next step is simple. Open the textbook. Open the LLM. Pick one half-finished idea and finish it this month. Then tell us.</p>
+    <a class="btn" href="index.html">← Back To The Boss</a>
+    <a class="btn gold" href="https://github.com/jinleiphys/DAGA" target="_blank" rel="noopener">★ Star on GitHub</a>
+  </section>
+
+  <footer>
+    <div class="site">vibeinscience.com · DAGA movement</div>
+    <div>Science knows no borders. Parody knows no shame.</div>
+  </footer>
+
+</body>
+</html>
