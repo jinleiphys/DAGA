@@ -71,12 +71,12 @@
   }
   h1 {
     font-family: 'Impact', 'Arial Black', sans-serif;
-    font-size: clamp(2.8rem, 9vw, 9rem);
-    line-height: 0.9;
+    font-size: clamp(2rem, 8vw, 9rem);
+    line-height: 1;
     letter-spacing: -0.01em;
     text-transform: uppercase;
     color: var(--blue);
-    text-shadow: 4px 4px 0 var(--red), 8px 8px 0 var(--ink);
+    text-shadow: 3px 3px 0 var(--red), 6px 6px 0 var(--ink);
     margin-bottom: 1.4rem;
     max-width: 18ch;
   }
@@ -279,6 +279,44 @@
   }
   footer .site { color: var(--gold); letter-spacing: 0.15em; text-transform: uppercase; }
   footer .disclaimer { margin-top: 0.6rem; font-style: italic; opacity: 0.75; max-width: 60ch; margin-left: auto; margin-right: auto; }
+
+  /* ============ MOBILE ============ */
+  @media (max-width: 600px) {
+    .hero { padding: 6vh 5vw 4vh; }
+    h1 {
+      font-size: 2.4rem;
+      line-height: 1.05;
+      text-shadow: 2px 2px 0 var(--red), 4px 4px 0 var(--ink);
+    }
+    h1 .again { transform: rotate(-1deg); }
+    .eyebrow {
+      font-size: 0.65rem;
+      padding: 0.4rem 0.9rem;
+      letter-spacing: 0.15em;
+      box-shadow: 4px 4px 0 var(--ink);
+    }
+    .tagline { font-size: 1rem; margin: 0.8rem auto 1.5rem; }
+    .acronym { font-size: 0.75rem; padding: 0.6rem 1rem; }
+    .cta-row { flex-direction: column; align-items: center; gap: 0.7rem; }
+    .btn { font-size: 0.8rem; padding: 0.85rem 1.4rem; box-shadow: 4px 4px 0 var(--ink); }
+    .section { padding: 5vh 5vw; }
+    .section-title {
+      font-size: 1.8rem;
+      text-shadow: 2px 2px 0 var(--ink);
+    }
+    .speech {
+      padding: 1.5rem 1.2rem;
+      font-size: 0.95rem;
+      box-shadow: 8px 8px 0 var(--red);
+    }
+    .quotes-grid { grid-template-columns: 1fr; gap: 1.2rem; }
+    .quote-card { padding: 1.4rem 1.2rem; box-shadow: 6px 6px 0 var(--blue) !important; }
+    .quote-card:nth-child(even) { box-shadow: 6px 6px 0 var(--red) !important; }
+    .quote-card::before { font-size: 3.5rem; top: -0.6rem; }
+    .ticker { font-size: 0.85rem; padding: 0.7rem 0; }
+    .cta-final h2 { font-size: 1.6rem; text-shadow: 2px 2px 0 var(--red); }
+    .cta-final p { font-size: 0.95rem; }
+  }
 
 </style>
 </head>
