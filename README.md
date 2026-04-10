@@ -1,6 +1,9 @@
 # DAGA
 
-**Make Direct Reactions Great Again.** Believe me, nobody grazes better than us.
+**Make Nuclear Physics Great Again.**
+
+Front page: `index.html`
+Direct-reaction campaign page: `direct.html`
 
 Landing page at [vibein.science](https://vibein.science).
 
