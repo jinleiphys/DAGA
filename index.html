@@ -3,1154 +3,2188 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Make Nuclear Physics Great Again</title>
-<meta name="description" content="Make Nuclear Physics Great Again. The big movement. The beautiful movement. Believe me." />
-<meta property="og:title" content="Make Nuclear Physics Great Again" />
-<meta property="og:description" content="Make Nuclear Physics Great Again. The big movement. The beautiful movement. Believe me." />
+<title>Make Nuclear Physics Great Again | The Biggest Field</title>
+<meta name="description" content="The strongest force. The biggest machines. The most beautiful nuclei. Nuclear physics belongs on the main stage." />
+<meta property="og:title" content="Make Nuclear Physics Great Again | The Biggest Field" />
+<meta property="og:description" content="The strongest force. The biggest machines. The most beautiful nuclei. Nuclear physics belongs on the main stage." />
 <meta property="og:type" content="website" />
+<meta name="theme-color" content="#071a3d" />
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚛️</text></svg>" />
 <style>
   :root {
-    --red: #d92b4a;
-    --red-dk: #9e1a33;
-    --blue: #0a2a5e;
-    --blue-dk: #05162f;
-    --cream: #f5f0e1;
-    --paper: #fffaf0;
-    --ink: #0b0b0b;
-    --gold: #ffd54a;
-    --gold-glow: rgba(255, 213, 74, 0.35);
+    --navy: #071a3d;
+    --navy-2: #0d2c63;
+    --navy-3: #17448d;
+    --red: #c91f37;
+    --red-deep: #841325;
+    --gold: #f4c54c;
+    --paper: #f8f4ec;
+    --white: #ffffff;
+    --ink: #11151c;
+    --ink-soft: #4f5766;
+    --line: rgba(17, 21, 28, 0.12);
+    --shadow: 0 24px 64px rgba(6, 17, 40, 0.18);
   }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
-    font-family: Baskerville, "Palatino Linotype", "Book Antiqua", serif;
-    background: var(--cream);
+    font-family: Georgia, "Times New Roman", serif;
+    background:
+      linear-gradient(180deg, #edf2f8 0%, #f8f5ef 24%, #ffffff 100%);
     color: var(--ink);
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
-    line-height: 1.5;
+    line-height: 1.55;
   }
 
-  /* ── SCROLL REVEAL ── */
+  a {
+    color: inherit;
+  }
+
   .reveal {
     opacity: 0;
-    transform: translateY(40px);
+    transform: translateY(36px);
     transition: opacity 0.7s ease, transform 0.7s ease;
   }
+
   .reveal.visible {
     opacity: 1;
     transform: translateY(0);
   }
 
-  /* ── NAV ── */
-  nav {
-    position: sticky;
-    top: 0;
-    z-index: 30;
-    background: rgba(5, 22, 47, 0.95);
-    color: #fff;
-    padding: 1rem 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 1rem;
-    border-bottom: 5px solid var(--red);
+  .topline {
+    position: relative;
+    z-index: 60;
+    background: linear-gradient(90deg, var(--red-deep), var(--red), var(--red-deep));
+    color: var(--white);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.18);
     font-family: "Courier New", monospace;
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
-    font-size: 0.78rem;
-    backdrop-filter: blur(14px);
-  }
-  nav .brand {
-    color: #fff;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.7rem;
-    text-decoration: none;
-    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-    font-size: 1rem;
-    letter-spacing: 0.08em;
-  }
-  nav .brand .brand-text {
-    display: flex;
-    flex-direction: column;
-    line-height: 0.95;
-  }
-  nav .brand .brand-text strong {
-    font-size: 1.15rem;
-    letter-spacing: 0.1em;
-  }
-  nav .brand .brand-text span {
-    font-family: "Courier New", monospace;
-    font-size: 0.62rem;
+    font-size: 0.74rem;
     letter-spacing: 0.16em;
-    color: rgba(255,255,255,0.78);
+    text-transform: uppercase;
   }
-  nav .brand .atom {
-    display: inline-block;
-    width: 38px;
-    height: 38px;
-    background: var(--red);
-    color: #fff;
-    border-radius: 50%;
-    text-align: center;
-    line-height: 38px;
-    font-size: 1.3rem;
-    border: 3px solid var(--gold);
-    animation: pulse-atom 2.5s ease-in-out infinite;
-  }
-  @keyframes pulse-atom {
-    0%, 100% { box-shadow: 0 0 0 0 var(--gold-glow); }
-    50% { box-shadow: 0 0 18px 6px var(--gold-glow); }
-  }
-  nav .links {
+
+  .topline-track {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0.8rem 1.5rem;
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-end;
-    gap: 0.9rem;
+    justify-content: center;
+    gap: 0.85rem 1.4rem;
   }
-  nav a { color: var(--gold); text-decoration: none; transition: color 0.15s; }
-  nav a:hover { color: #fff; }
 
-  /* ── HERO ── */
-  .hero {
-    min-height: 100vh;
+  .topline-track span::before {
+    content: "★";
+    color: var(--gold);
+    margin-right: 0.6rem;
+  }
+
+  .site-nav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(7, 26, 61, 0.9);
+    backdrop-filter: blur(16px);
+    border-bottom: 4px solid var(--gold);
+  }
+
+  .nav-inner {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 1rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.2rem;
+  }
+
+  .brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.85rem;
+    color: var(--white);
+    text-decoration: none;
+  }
+
+  .brand .atom {
+    width: 44px;
+    height: 44px;
+    display: inline-grid;
+    place-items: center;
+    border-radius: 50%;
+    background: radial-gradient(circle at 35% 35%, #ef5f74 0%, var(--red) 60%, var(--red-deep) 100%);
+    border: 3px solid var(--gold);
+    box-shadow: 0 0 0 5px rgba(244, 197, 76, 0.14);
+    font-size: 1.25rem;
+  }
+
+  .brand-text {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 8vh 6vw 6vh;
-    text-align: center;
-    position: relative;
-    background:
-      radial-gradient(ellipse at 50% 30%, rgba(217, 43, 74, 0.12) 0%, transparent 55%),
-      radial-gradient(ellipse at 20% 80%, rgba(10, 42, 94, 0.15) 0%, transparent 50%),
-      radial-gradient(ellipse at 80% 70%, rgba(255, 213, 74, 0.1) 0%, transparent 45%),
-      var(--cream);
-    overflow: hidden;
+    gap: 0.14rem;
+    line-height: 1;
   }
+
+  .brand-text strong {
+    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+    font-size: 1.35rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .brand-text span {
+    font-family: "Courier New", monospace;
+    font-size: 0.63rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  .nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.7rem 1.2rem;
+    font-family: "Courier New", monospace;
+    font-size: 0.74rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .nav-links a {
+    color: rgba(255, 255, 255, 0.82);
+    text-decoration: none;
+    transition: color 0.15s ease;
+  }
+
+  .nav-links a:hover {
+    color: var(--gold);
+  }
+
+  .nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
+
+  .nav-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.55rem 0.9rem;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.08);
+    color: var(--white);
+    font-family: "Courier New", monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    white-space: nowrap;
+  }
+
+  .nav-chip.primary {
+    background: var(--gold);
+    color: var(--navy);
+    border-color: var(--gold);
+    font-weight: bold;
+  }
+
+  .hero {
+    position: relative;
+    overflow: hidden;
+    padding: clamp(4rem, 7vw, 6.2rem) 6vw 8rem;
+    background:
+      radial-gradient(circle at 18% 22%, rgba(255, 255, 255, 0.1) 0%, transparent 24%),
+      radial-gradient(circle at 84% 18%, rgba(244, 197, 76, 0.2) 0%, transparent 18%),
+      linear-gradient(140deg, #041127 0%, var(--navy) 34%, var(--navy-2) 72%, var(--navy-3) 100%);
+    color: var(--white);
+  }
+
   .hero::before {
     content: "";
     position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: conic-gradient(from 0deg at 50% 50%,
-      transparent 0deg,
-      rgba(255, 213, 74, 0.04) 60deg,
-      transparent 120deg,
-      rgba(217, 43, 74, 0.03) 180deg,
-      transparent 240deg,
-      rgba(10, 42, 94, 0.04) 300deg,
-      transparent 360deg
-    );
-    animation: hero-rotate 30s linear infinite;
+    inset: 0;
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.07), transparent 32%),
+      radial-gradient(circle, rgba(255, 255, 255, 0.14) 0 1.4px, transparent 1.5px);
+    background-size: auto, 26px 26px;
+    opacity: 0.3;
+    mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.92), rgba(0, 0, 0, 0.22));
     pointer-events: none;
   }
-  @keyframes hero-rotate {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
+
+  .hero::after {
+    content: "";
+    position: absolute;
+    right: -18vw;
+    top: -6vh;
+    width: 48vw;
+    height: 56vw;
+    min-width: 420px;
+    min-height: 420px;
+    border-radius: 50%;
+    background:
+      radial-gradient(circle, rgba(255, 255, 255, 0.18) 0%, rgba(255, 255, 255, 0.08) 28%, transparent 64%);
+    filter: blur(6px);
+    animation: hero-drift 14s ease-in-out infinite;
+    pointer-events: none;
+  }
+
+  @keyframes hero-drift {
+    0%, 100% {
+      transform: translateY(0) scale(1);
+    }
+    50% {
+      transform: translateY(18px) scale(1.03);
+    }
+  }
+
+  .hero-shell {
+    position: relative;
+    z-index: 1;
+    max-width: 1360px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: minmax(0, 1.35fr) minmax(320px, 0.9fr);
+    align-items: end;
+    gap: clamp(2rem, 4vw, 4rem);
+  }
+
+  .hero-copy {
+    max-width: 760px;
+  }
+
+  .hero-kicker {
+    margin-bottom: 1rem;
+    font-family: "Courier New", monospace;
+    font-size: 0.82rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
   }
 
   .eyebrow {
-    display: inline-block;
-    background: var(--blue);
-    color: #fff;
-    padding: 0.6rem 1.5rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1.1rem;
+    margin-bottom: 1.35rem;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
     font-family: "Courier New", monospace;
-    font-size: clamp(0.75rem, 1.4vw, 1rem);
-    letter-spacing: 0.22em;
+    font-size: 0.78rem;
+    letter-spacing: 0.18em;
     text-transform: uppercase;
-    border: 3px solid var(--ink);
-    box-shadow: 6px 6px 0 var(--ink);
-    margin-bottom: 1.8rem;
-    transform: rotate(-1deg);
-    animation: tilt 6s ease-in-out infinite;
-    position: relative;
-    z-index: 1;
-  }
-  @keyframes tilt {
-    0%, 100% { transform: rotate(-1deg); }
-    50% { transform: rotate(1deg); }
-  }
-  .hero-kicker {
-    font-family: "Courier New", monospace;
-    font-size: 0.85rem;
-    color: var(--red);
-    text-transform: uppercase;
-    letter-spacing: 0.22em;
-    margin-bottom: 1.2rem;
-    position: relative;
-    z-index: 1;
-    animation: fade-in-down 0.8s ease both;
-  }
-  @keyframes fade-in-down {
-    from { opacity: 0; transform: translateY(-20px); }
-    to { opacity: 1; transform: translateY(0); }
   }
 
   h1 {
     font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-    font-size: clamp(3rem, 10vw, 12rem);
-    line-height: 0.92;
-    letter-spacing: -0.02em;
+    font-size: clamp(4rem, 9vw, 8.7rem);
+    line-height: 0.88;
+    letter-spacing: -0.03em;
     text-transform: uppercase;
-    color: var(--blue);
-    text-shadow:
-      4px 4px 0 var(--red),
-      8px 8px 0 var(--ink),
-      0 0 60px rgba(10, 42, 94, 0.15);
-    margin-bottom: 1.6rem;
-    max-width: 14ch;
-    position: relative;
-    z-index: 1;
-    animation: slam-in 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+    max-width: 11ch;
+    text-wrap: balance;
+    text-shadow: 0 14px 36px rgba(0, 0, 0, 0.28);
   }
-  @keyframes slam-in {
-    from { opacity: 0; transform: scale(1.15) translateY(30px); }
-    to { opacity: 1; transform: scale(1) translateY(0); }
-  }
+
   h1 .gold {
     color: var(--gold);
-    text-shadow:
-      4px 4px 0 var(--red),
-      8px 8px 0 var(--ink),
-      0 0 40px var(--gold-glow);
-    animation: gold-pulse 3s ease-in-out infinite;
-  }
-  @keyframes gold-pulse {
-    0%, 100% { text-shadow: 4px 4px 0 var(--red), 8px 8px 0 var(--ink), 0 0 40px var(--gold-glow); }
-    50% { text-shadow: 4px 4px 0 var(--red), 8px 8px 0 var(--ink), 0 0 80px var(--gold-glow); }
+    display: inline-block;
+    animation: gold-pulse 3.2s ease-in-out infinite;
   }
 
   .tagline {
-    font-size: clamp(1.15rem, 2.8vw, 2.2rem);
-    max-width: 30ch;
-    margin: 1rem auto 2.4rem;
-    font-style: italic;
-    position: relative;
-    z-index: 1;
-    animation: fade-in-down 1s ease 0.3s both;
+    margin: 1.5rem 0 0;
+    max-width: 24ch;
+    font-size: clamp(1.2rem, 2.5vw, 2rem);
+    line-height: 1.28;
+    color: rgba(255, 255, 255, 0.94);
   }
+
   .tagline strong {
-    color: var(--red);
-    text-transform: uppercase;
+    color: var(--gold);
     font-style: normal;
+    text-transform: uppercase;
   }
+
   .slogan-bar {
+    margin: 1.7rem 0 0;
+    max-width: 52rem;
+    padding: 1rem 1.1rem 1.05rem;
+    border-top: 2px solid rgba(255, 255, 255, 0.25);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.25);
+    background: linear-gradient(90deg, rgba(201, 31, 55, 0.18), rgba(255, 255, 255, 0.05), rgba(244, 197, 76, 0.18));
     font-family: "Courier New", monospace;
-    font-size: clamp(0.85rem, 1.5vw, 1.1rem);
-    color: var(--blue);
-    border-top: 4px solid var(--ink);
-    border-bottom: 4px solid var(--ink);
-    padding: 0.9rem 1.6rem;
-    margin: 0.8rem 0 2.6rem;
+    font-size: clamp(0.82rem, 1.45vw, 1rem);
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    max-width: 1100px;
-    position: relative;
-    z-index: 1;
-    animation: fade-in-down 1s ease 0.5s both;
+    color: rgba(255, 255, 255, 0.94);
   }
-  .slogan-bar b { color: var(--red); }
+
+  .slogan-bar b {
+    color: var(--gold);
+  }
 
   .cta-row {
     display: flex;
-    gap: 1.2rem;
     flex-wrap: wrap;
-    justify-content: center;
-    margin-top: 0.4rem;
-    position: relative;
-    z-index: 1;
-    animation: fade-in-down 1s ease 0.7s both;
+    gap: 0.9rem;
+    margin-top: 1.9rem;
   }
-  .btn {
-    display: inline-block;
-    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-    font-size: clamp(0.9rem, 1.5vw, 1.1rem);
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    padding: 1.1rem 2rem;
-    border: 4px solid var(--ink);
-    box-shadow: 7px 7px 0 var(--ink);
-    text-decoration: none;
-    transition: transform 0.1s ease, box-shadow 0.1s ease;
-    position: relative;
-  }
-  .btn:hover {
-    transform: translate(3px, 3px);
-    box-shadow: 4px 4px 0 var(--ink);
-  }
-  .btn:active { transform: translate(5px, 5px); box-shadow: 2px 2px 0 var(--ink); }
-  .btn-red { background: var(--red); color: #fff; }
-  .btn-blue { background: var(--blue); color: var(--gold); }
-  .btn-gold { background: var(--gold); color: var(--ink); }
 
-  /* ── BIG NUMBERS ── */
-  .numbers-strip {
-    background: var(--blue-dk);
-    border-top: 5px solid var(--red);
-    border-bottom: 5px solid var(--red);
-    padding: 3.5rem 2rem;
+  .cta-final .section-kicker {
+    color: rgba(255, 255, 255, 0.72);
   }
+
+  .exp-num {
+    font-size: 0.5em;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 54px;
+    padding: 0.95rem 1.55rem;
+    border-radius: 999px;
+    border: 0;
+    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+    font-size: 1rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+    cursor: pointer;
+  }
+
+  .btn:hover {
+    transform: translateY(-2px);
+  }
+
+  .btn-red {
+    background: var(--red);
+    color: var(--white);
+    box-shadow: 0 16px 32px rgba(201, 31, 55, 0.34);
+  }
+
+  .btn-blue {
+    background: var(--white);
+    color: var(--navy);
+    box-shadow: 0 16px 32px rgba(3, 11, 28, 0.22);
+  }
+
+  .btn-gold {
+    background: var(--gold);
+    color: var(--ink);
+    box-shadow: 0 16px 32px rgba(244, 197, 76, 0.24);
+  }
+
+  .hero-points {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin-top: 1.55rem;
+  }
+
+  .hero-points span {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    padding: 0.65rem 0.95rem;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    font-family: "Courier New", monospace;
+    font-size: 0.73rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .hero-points span::before {
+    content: "★";
+    color: var(--gold);
+  }
+
+  .hero-side {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+
+  .panel {
+    position: relative;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.96);
+    color: var(--ink);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 26px;
+    box-shadow: var(--shadow);
+    padding: 1.5rem;
+  }
+
+  .panel::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto;
+    height: 6px;
+    background: linear-gradient(90deg, var(--red), var(--white), var(--gold), var(--navy-2));
+  }
+
+  .panel-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    margin-bottom: 0.8rem;
+    color: var(--red);
+    font-family: "Courier New", monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  .panel-label::before {
+    content: "●";
+    color: var(--gold);
+  }
+
+  .hero-panel h2,
+  .promise-panel h3 {
+    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+    line-height: 0.97;
+    text-transform: uppercase;
+    color: var(--navy);
+    text-wrap: balance;
+  }
+
+  .hero-panel h2 {
+    font-size: clamp(2rem, 4vw, 3.4rem);
+    margin-bottom: 0.9rem;
+  }
+
+  .hero-panel p {
+    font-size: 1.02rem;
+    color: var(--ink-soft);
+  }
+
+  .score-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.85rem;
+    margin-top: 1.2rem;
+  }
+
+  .score-item {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    padding: 1rem;
+  }
+
+  .score-item strong {
+    display: block;
+    margin-bottom: 0.35rem;
+    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+    font-size: 2rem;
+    line-height: 1;
+    text-transform: uppercase;
+    color: var(--navy);
+  }
+
+  .score-item span {
+    display: block;
+    font-family: "Courier New", monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+
+  .promise-panel h3 {
+    font-size: 2.2rem;
+    margin-bottom: 0.9rem;
+  }
+
+  .promise-list {
+    display: grid;
+    gap: 0.85rem;
+  }
+
+  .promise-item {
+    padding: 0.95rem 1rem;
+    border-radius: 18px;
+    background: linear-gradient(180deg, #fffaf2 0%, #f7efe2 100%);
+    border: 1px solid var(--line);
+  }
+
+  .promise-item strong {
+    display: block;
+    margin-bottom: 0.3rem;
+    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+    font-size: 1.22rem;
+    line-height: 1;
+    text-transform: uppercase;
+    color: var(--red);
+  }
+
+  .promise-item span {
+    display: block;
+    font-size: 0.95rem;
+    color: var(--ink-soft);
+  }
+
+  .mini-quote {
+    margin-top: 1rem;
+    padding: 1rem 1.1rem;
+    border-radius: 18px;
+    background: var(--navy);
+    color: rgba(255, 255, 255, 0.95);
+    font-size: 1rem;
+    font-style: italic;
+    line-height: 1.5;
+  }
+
+  .numbers-strip {
+    position: relative;
+    z-index: 3;
+    margin-top: -4.7rem;
+    padding: 0 6vw 5.4rem;
+  }
+
+  .strip-shell {
+    max-width: 1360px;
+    margin: 0 auto;
+  }
+
+  .ribbon {
+    width: fit-content;
+    max-width: 100%;
+    margin: 0 auto 1.3rem;
+    padding: 0.9rem 1.35rem;
+    border-radius: 999px;
+    background: var(--red);
+    color: var(--white);
+    box-shadow: 0 18px 36px rgba(201, 31, 55, 0.26);
+    text-align: center;
+    font-family: "Courier New", monospace;
+    font-size: 0.76rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+
   .numbers-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 2rem;
-    max-width: 1200px;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 1rem;
+  }
+
+  .num-card {
+    position: relative;
+    background: rgba(255, 255, 255, 0.98);
+    border: 1px solid rgba(6, 17, 40, 0.08);
+    border-radius: 24px;
+    box-shadow: var(--shadow);
+    padding: 1.6rem 1.25rem 1.3rem;
+  }
+
+  .num-card::before {
+    content: "";
+    position: absolute;
+    left: 1.15rem;
+    right: 1.15rem;
+    top: 0;
+    height: 6px;
+    border-radius: 0 0 999px 999px;
+    background: linear-gradient(90deg, var(--navy), var(--red), var(--gold));
+  }
+
+  .big-num {
+    display: block;
+    margin-bottom: 0.35rem;
+    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+    font-size: clamp(2.4rem, 4.2vw, 3.8rem);
+    line-height: 0.9;
+    color: var(--navy);
+  }
+
+  .num-label {
+    display: block;
+    margin-bottom: 0.4rem;
+    font-family: "Courier New", monospace;
+    font-size: 0.73rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--red);
+  }
+
+  .num-quip {
+    display: block;
+    color: var(--ink-soft);
+    font-size: 0.96rem;
+    line-height: 1.45;
+  }
+
+  .section {
+    padding: 6.5rem 6vw;
+  }
+
+  .section-paper {
+    background: linear-gradient(180deg, rgba(248, 244, 236, 0.92), rgba(255, 255, 255, 0.98));
+  }
+
+  .section-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+
+  .section-kicker {
+    margin-bottom: 0.8rem;
+    text-align: center;
+    font-family: "Courier New", monospace;
+    font-size: 0.76rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--red);
+  }
+
+  .section-title {
+    max-width: 14ch;
     margin: 0 auto;
     text-align: center;
-  }
-  .num-card {
-    color: #fff;
-  }
-  .num-card .big-num {
-    display: block;
     font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-    font-size: clamp(2.8rem, 6vw, 4.5rem);
-    color: var(--gold);
-    text-shadow: 3px 3px 0 var(--red);
-    line-height: 1;
-    margin-bottom: 0.35rem;
+    font-size: clamp(2.8rem, 6vw, 5.4rem);
+    line-height: 0.9;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+    color: var(--navy);
+    text-wrap: balance;
   }
-  .num-card .num-label {
+
+  .section-intro {
+    max-width: 52ch;
+    margin: 1.15rem auto 0;
+    text-align: center;
+    font-size: 1.1rem;
+    color: var(--ink-soft);
+  }
+
+  .speech-wrap {
+    position: relative;
+    max-width: 940px;
+    margin: 3rem auto 0;
+  }
+
+  .speech-wrap::before {
+    content: "";
+    position: absolute;
+    left: 2.4rem;
+    right: 2.4rem;
+    top: -14px;
+    height: 12px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, var(--red) 0 24%, var(--white) 24% 48%, var(--navy-2) 48% 72%, var(--gold) 72% 100%);
+    box-shadow: 0 10px 22px rgba(17, 21, 28, 0.12);
+  }
+
+  .speech {
+    position: relative;
+    background: rgba(255, 255, 255, 0.96);
+    border: 1px solid rgba(17, 21, 28, 0.08);
+    border-radius: 30px;
+    box-shadow: var(--shadow);
+    padding: 3.1rem 2.8rem 2.6rem;
+    font-size: clamp(1.02rem, 1.7vw, 1.24rem);
+    line-height: 1.8;
+  }
+
+  .speech::after {
+    content: "NUGA";
+    position: absolute;
+    right: 1.5rem;
+    top: 1.2rem;
+    font-family: "Courier New", monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: rgba(17, 21, 28, 0.28);
+  }
+
+  .speech p {
+    margin-bottom: 1.2rem;
+  }
+
+  .speech p:last-of-type {
+    margin-bottom: 0;
+  }
+
+  .speech strong {
+    color: var(--red);
+    text-transform: uppercase;
+  }
+
+  .speech .sig {
+    display: block;
+    margin-top: 1.5rem;
+    text-align: right;
+    font-family: "Brush Script MT", cursive;
+    font-size: 2.5rem;
+    color: var(--navy-2);
+  }
+
+  .speech-podium {
+    display: block;
+    margin-top: 1rem;
+    text-align: center;
     font-family: "Courier New", monospace;
     font-size: 0.72rem;
     letter-spacing: 0.18em;
     text-transform: uppercase;
-    color: rgba(255,255,255,0.8);
-  }
-  .num-card .num-quip {
-    display: block;
-    font-style: italic;
-    font-size: 0.82rem;
-    color: rgba(255,255,255,0.55);
-    margin-top: 0.3rem;
+    color: rgba(17, 21, 28, 0.52);
   }
 
-  /* ── SECTIONS ── */
-  .section {
-    padding: 8vh 6vw;
-    max-width: 1240px;
-    margin: 0 auto;
-  }
-  .section-title {
-    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-    font-size: clamp(2.2rem, 6.5vw, 5rem);
-    text-transform: uppercase;
-    color: var(--red);
-    text-shadow: 4px 4px 0 var(--ink);
-    text-align: center;
-    margin-bottom: 2.6rem;
-    letter-spacing: 0.02em;
+  .flag-divider {
+    padding: 0 6vw;
   }
 
-  /* ── SPEECH ── */
-  .speech-wrap {
-    position: relative;
-    max-width: 960px;
+  .flag-divider span {
+    display: block;
+    max-width: 1280px;
     margin: 0 auto;
-  }
-  .speech-wrap::before {
-    content: "";
-    position: absolute;
-    top: -12px;
-    left: -12px;
-    right: -12px;
-    height: 8px;
-    background: repeating-linear-gradient(
-      90deg,
-      var(--red) 0 40px,
-      var(--gold) 40px 50px,
-      var(--blue) 50px 90px,
-      var(--gold) 90px 100px
-    );
-    border: 3px solid var(--ink);
-  }
-  .speech {
-    background: var(--paper);
-    border: 4px solid var(--ink);
-    box-shadow: 14px 14px 0 var(--blue);
-    padding: 3.5rem 3rem 3rem;
-    font-size: clamp(1.02rem, 1.8vw, 1.28rem);
-    line-height: 1.75;
-  }
-  .speech p { margin-bottom: 1.15rem; }
-  .speech p:last-of-type { margin-bottom: 0; }
-  .speech strong { color: var(--red); text-transform: uppercase; }
-  .speech .sig {
-    display: block;
-    text-align: right;
-    margin-top: 1.8rem;
-    font-family: "Brush Script MT", cursive;
-    font-size: 2.4rem;
-    color: var(--blue);
-  }
-  .speech-podium {
-    display: block;
+    padding: 0.95rem 1.2rem;
+    border-radius: 18px 18px 0 0;
+    background: linear-gradient(90deg, var(--navy), var(--red), var(--gold), var(--navy-2));
+    color: var(--white);
     text-align: center;
-    margin-top: 1.5rem;
     font-family: "Courier New", monospace;
-    font-size: 0.68rem;
-    letter-spacing: 0.2em;
+    font-size: 0.75rem;
+    letter-spacing: 0.22em;
     text-transform: uppercase;
-    color: var(--blue);
-    opacity: 0.6;
   }
 
-  /* ── THE GREAT STUDENT THEFT ── */
   .theft-section {
-    background:
-      repeating-linear-gradient(
-        -45deg,
-        transparent 0 28px,
-        rgba(217, 43, 74, 0.04) 28px 30px
-      ),
-      linear-gradient(175deg, #1a0a0e 0%, var(--red-dk) 35%, #1a0a0e 100%);
-    color: #fff;
-    border-top: 6px solid var(--gold);
-    border-bottom: 6px solid var(--gold);
-    padding: 6vh 6vw;
     position: relative;
     overflow: hidden;
+    padding: 6rem 6vw;
+    background:
+      radial-gradient(circle at 80% 22%, rgba(255, 255, 255, 0.08) 0%, transparent 18%),
+      linear-gradient(180deg, #55101b 0%, var(--red-deep) 42%, #390812 100%);
+    color: var(--white);
   }
+
   .theft-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      repeating-linear-gradient(
+        -35deg,
+        transparent 0 28px,
+        rgba(255, 255, 255, 0.05) 28px 30px
+      );
+    opacity: 0.35;
+    pointer-events: none;
+  }
+
+  .theft-section::after {
     content: "THEFT";
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) rotate(-12deg);
+    inset: auto auto 4% 50%;
+    transform: translateX(-50%) rotate(-12deg);
     font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-    font-size: clamp(8rem, 22vw, 20rem);
+    font-size: clamp(7rem, 20vw, 18rem);
+    letter-spacing: 0.04em;
     text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.03);
-    pointer-events: none;
+    color: rgba(255, 255, 255, 0.04);
     white-space: nowrap;
-    letter-spacing: 0.05em;
+    pointer-events: none;
   }
+
   .theft-inner {
-    max-width: 1200px;
-    margin: 0 auto;
     position: relative;
     z-index: 1;
+    max-width: 1280px;
+    margin: 0 auto;
   }
-  .theft-headline {
-    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-    font-size: clamp(2.4rem, 7vw, 5.5rem);
-    text-transform: uppercase;
-    color: var(--gold);
-    text-shadow: 4px 4px 0 var(--red-dk), 0 0 40px rgba(255, 213, 74, 0.25);
-    text-align: center;
-    line-height: 0.95;
-    margin-bottom: 0.6rem;
-  }
+
   .theft-sub {
+    margin-top: 0.75rem;
+    margin-bottom: 2.6rem;
     text-align: center;
     font-family: "Courier New", monospace;
-    font-size: clamp(0.7rem, 1.2vw, 0.88rem);
-    letter-spacing: 0.25em;
+    font-size: 0.76rem;
+    letter-spacing: 0.22em;
     text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.55);
-    margin-bottom: 3rem;
+    color: rgba(255, 255, 255, 0.68);
   }
-  .theft-rant {
-    max-width: 860px;
-    margin: 0 auto 3rem;
-    font-size: clamp(1.05rem, 1.8vw, 1.3rem);
-    line-height: 1.75;
+
+  .theft-headline {
+    max-width: 11ch;
+    margin: 0 auto;
     text-align: center;
+    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+    font-size: clamp(2.8rem, 6.5vw, 5.8rem);
+    line-height: 0.9;
+    text-transform: uppercase;
+    color: var(--gold);
+    text-shadow: 0 16px 38px rgba(0, 0, 0, 0.18);
+  }
+
+  .theft-rant {
+    max-width: 820px;
+    margin: 0 auto 2.5rem;
+    text-align: center;
+    font-size: clamp(1.06rem, 1.8vw, 1.24rem);
+    line-height: 1.72;
     color: rgba(255, 255, 255, 0.92);
   }
+
   .theft-rant strong {
     color: var(--gold);
     text-transform: uppercase;
   }
+
   .theft-rant em {
-    color: rgba(255, 255, 255, 0.65);
+    color: rgba(255, 255, 255, 0.7);
   }
+
   .theft-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.6rem;
-    margin-bottom: 2.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(255px, 1fr));
+    gap: 1.35rem;
+    margin-bottom: 2rem;
   }
+
   .theft-card {
-    background: rgba(0, 0, 0, 0.4);
-    border: 3px solid rgba(255, 213, 74, 0.35);
-    padding: 1.8rem 1.5rem;
-    position: relative;
+    background: rgba(10, 16, 30, 0.35);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 24px;
+    padding: 1.55rem 1.35rem;
+    box-shadow: 0 18px 32px rgba(0, 0, 0, 0.16);
     transition: transform 0.15s ease, border-color 0.15s ease;
   }
+
   .theft-card:hover {
-    transform: translate(-2px, -2px);
-    border-color: var(--gold);
+    transform: translateY(-4px);
+    border-color: rgba(244, 197, 76, 0.6);
   }
-  .theft-card .theft-badge {
-    display: inline-block;
-    background: var(--red);
-    color: #fff;
-    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-    font-size: 0.72rem;
-    letter-spacing: 0.15em;
+
+  .theft-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.35rem 0.75rem;
+    margin-bottom: 0.85rem;
+    border-radius: 999px;
+    background: rgba(201, 31, 55, 0.9);
+    color: var(--white);
+    font-family: "Courier New", monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
-    padding: 0.3rem 0.8rem;
-    margin-bottom: 0.9rem;
-    border: 2px solid var(--gold);
   }
+
   .theft-card h4 {
+    margin-bottom: 0.55rem;
     font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-size: 1.9rem;
+    line-height: 0.96;
     text-transform: uppercase;
     color: var(--gold);
-    margin-bottom: 0.5rem;
-    line-height: 1;
   }
-  .theft-card .loot {
-    font-family: "Courier New", monospace;
-    font-size: 0.75rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--red);
-    margin-bottom: 0.7rem;
+
+  .loot {
     display: block;
+    margin-bottom: 0.7rem;
+    color: rgba(255, 255, 255, 0.68);
+    font-family: "Courier New", monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
   }
+
   .theft-card p {
+    color: rgba(255, 255, 255, 0.88);
     font-size: 0.96rem;
-    line-height: 1.6;
-    color: rgba(255, 255, 255, 0.82);
+    line-height: 1.62;
   }
+
   .theft-card p strong {
-    color: #fff;
+    color: var(--white);
   }
+
   .theft-verdict {
-    max-width: 800px;
+    max-width: 840px;
     margin: 0 auto;
+    padding: 1.7rem 1.8rem;
+    border-radius: 24px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(244, 197, 76, 0.42);
     text-align: center;
-    padding: 1.8rem 2rem;
-    background: rgba(255, 213, 74, 0.08);
-    border: 3px solid var(--gold);
-    font-size: clamp(1.05rem, 1.6vw, 1.2rem);
-    line-height: 1.7;
+    font-size: clamp(1.05rem, 1.65vw, 1.18rem);
+    line-height: 1.72;
+    color: rgba(255, 255, 255, 0.94);
   }
+
+  .verdict-label {
+    display: block;
+    margin-bottom: 0.45rem;
+    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+    font-size: 2rem;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+
   .theft-verdict strong {
     color: var(--gold);
     text-transform: uppercase;
   }
-  .theft-verdict .verdict-label {
-    display: block;
-    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-    font-size: clamp(1.4rem, 3vw, 2rem);
-    text-transform: uppercase;
-    color: var(--gold);
-    letter-spacing: 0.08em;
-    margin-bottom: 0.5rem;
-  }
 
-  @media (max-width: 600px) {
-    .theft-section { padding: 4vh 5vw; }
-    .theft-headline { font-size: 2.2rem; }
-    .theft-grid { grid-template-columns: 1fr; gap: 1.2rem; }
-    .theft-card { padding: 1.4rem 1.2rem; }
-    .theft-rant { font-size: 0.98rem; }
-    .theft-verdict { padding: 1.4rem 1.2rem; }
-  }
-
-  /* ── QUOTES ── */
   .quotes-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.35rem;
+    margin-top: 3rem;
   }
+
   .quote-card {
-    background: #fff;
-    border: 4px solid var(--ink);
-    box-shadow: 10px 10px 0 var(--blue);
-    padding: 2rem 1.8rem;
     position: relative;
-    font-size: 1.02rem;
-    line-height: 1.6;
-    transition: transform 0.18s ease, box-shadow 0.18s ease;
+    overflow: hidden;
+    background: var(--white);
+    border: 1px solid rgba(17, 21, 28, 0.08);
+    border-radius: 24px;
+    box-shadow: var(--shadow);
+    padding: 2rem 1.6rem 1.4rem;
+    transition: transform 0.16s ease, box-shadow 0.16s ease;
   }
-  .quote-card:nth-child(even) { box-shadow: 10px 10px 0 var(--red); transform: rotate(0.5deg); }
-  .quote-card:nth-child(3n) { transform: rotate(-0.7deg); }
-  .quote-card:hover {
-    transform: translate(-4px, -4px) rotate(0) !important;
-    box-shadow: 16px 16px 0 var(--ink);
-  }
+
   .quote-card::before {
-    content: "\201C";
+    content: "";
     position: absolute;
-    top: -1.4rem;
-    left: 0.8rem;
-    font-size: 6rem;
-    color: var(--red);
-    line-height: 1;
-    opacity: 0.85;
+    inset: 0 0 auto;
+    height: 6px;
+    background: linear-gradient(90deg, var(--navy), var(--red), var(--gold));
   }
-  .quote-card p { padding-top: 1.4rem; }
+
+  .quote-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 28px 72px rgba(6, 17, 40, 0.22);
+  }
+
+  .quote-card p {
+    padding-top: 0.6rem;
+    font-size: 1rem;
+    line-height: 1.65;
+  }
+
   .quote-card .src {
     display: block;
-    margin-top: 1.1rem;
+    margin-top: 1rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid rgba(17, 21, 28, 0.08);
     font-family: "Courier New", monospace;
     font-size: 0.72rem;
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: var(--blue);
-    border-top: 2px solid var(--cream);
-    padding-top: 0.7rem;
+    color: var(--red);
   }
 
-  /* ── BIG BOARD ── */
-  .big-board {
-    background: var(--blue-dk);
-    color: #fff;
-    border: 5px solid var(--ink);
-    box-shadow: 14px 14px 0 var(--red);
-    padding: 2.6rem;
-    max-width: 1120px;
-    margin: 0 auto;
-  }
-  .big-board h3 {
-    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-    font-size: clamp(2rem, 5vw, 3.6rem);
-    line-height: 0.95;
-    text-transform: uppercase;
-    color: var(--gold);
-    text-shadow: 3px 3px 0 var(--red);
-    margin-bottom: 1rem;
-  }
-  .big-board p {
-    font-size: clamp(1rem, 1.6vw, 1.16rem);
-    line-height: 1.7;
-    max-width: 56ch;
-    margin-bottom: 1.4rem;
-  }
-  .board-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 1rem;
-    margin-top: 1.3rem;
-  }
-  .board-card {
-    background: rgba(255,255,255,0.08);
-    border: 2px solid rgba(255,255,255,0.2);
-    padding: 1rem;
-  }
-  .board-card strong {
-    display: block;
-    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-    font-size: 1.35rem;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 0.45rem;
-  }
-  .board-card span {
-    display: block;
-    font-size: 0.95rem;
-    line-height: 1.5;
-    color: rgba(255,255,255,0.88);
-  }
-
-  /* ── COALITION / FRONTS ── */
   .coalition-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 1.4rem;
-    margin-bottom: 2.4rem;
+    gap: 1.3rem;
+    margin-top: 3rem;
+    margin-bottom: 2.2rem;
   }
+
   .front-card {
-    background: #fff;
-    border: 4px solid var(--ink);
-    box-shadow: 10px 10px 0 var(--blue);
-    padding: 1.6rem;
+    background: rgba(255, 255, 255, 0.92);
+    border: 1px solid rgba(17, 21, 28, 0.08);
+    border-radius: 24px;
+    box-shadow: var(--shadow);
+    padding: 1.55rem;
     transition: transform 0.15s ease, box-shadow 0.15s ease;
   }
+
   .front-card:hover {
-    transform: translate(-2px, -2px);
-    box-shadow: 12px 12px 0 var(--ink);
+    transform: translateY(-3px);
+    box-shadow: 0 28px 72px rgba(6, 17, 40, 0.2);
   }
-  .front-card:nth-child(even) { box-shadow: 10px 10px 0 var(--red); }
+
   .front-card.current {
-    background: var(--paper);
-    box-shadow: 12px 12px 0 var(--gold);
-    border-color: var(--gold);
+    background: linear-gradient(180deg, var(--navy) 0%, var(--navy-2) 100%);
+    border-color: rgba(255, 255, 255, 0.12);
+    color: var(--white);
   }
+
   .front-card .label {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
     margin-bottom: 0.7rem;
     font-family: "Courier New", monospace;
     font-size: 0.72rem;
     letter-spacing: 0.14em;
     text-transform: uppercase;
     color: var(--red);
-    font-weight: bold;
   }
+
+  .front-card.current .label {
+    color: var(--gold);
+  }
+
   .front-card h3 {
+    margin-bottom: 0.65rem;
     font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
     font-size: 2rem;
-    line-height: 0.95;
+    line-height: 0.96;
     text-transform: uppercase;
-    color: var(--blue-dk);
-    margin-bottom: 0.7rem;
+    color: var(--navy);
   }
+
+  .front-card.current h3 {
+    color: var(--white);
+  }
+
   .front-card p {
     font-size: 0.98rem;
-    line-height: 1.6;
+    line-height: 1.62;
+    color: var(--ink-soft);
+  }
+
+  .front-card.current p {
+    color: rgba(255, 255, 255, 0.88);
   }
 
   .callout-note {
-    max-width: 1000px;
-    margin: 0 auto;
-    background: var(--blue-dk);
-    color: #fff;
-    border: 5px solid var(--ink);
-    box-shadow: 14px 14px 0 var(--red);
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, #08162f 0%, var(--navy) 52%, var(--navy-2) 100%);
+    color: var(--white);
+    border-radius: 30px;
+    box-shadow: var(--shadow);
     padding: 2.2rem;
-    text-align: center;
   }
+
+  .callout-note::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.08), transparent 34%),
+      radial-gradient(circle, rgba(255, 255, 255, 0.18) 0 1px, transparent 1.2px);
+    background-size: auto, 20px 20px;
+    opacity: 0.2;
+    pointer-events: none;
+  }
+
+  .callout-note p,
+  .callout-note .cta-row {
+    position: relative;
+    z-index: 1;
+  }
+
+  .callout-note p {
+    max-width: 60ch;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 1.08rem;
+    line-height: 1.72;
+  }
+
   .callout-note strong {
     color: var(--gold);
     text-transform: uppercase;
   }
-  .callout-note p {
-    font-size: 1.08rem;
-    line-height: 1.7;
-    max-width: 60ch;
-    margin: 0 auto 1.4rem;
+
+  .callout-note .cta-row {
+    justify-content: center;
+    margin-top: 1.5rem;
   }
 
-  /* ── TICKER ── */
   .ticker {
-    background: var(--red);
-    color: #fff;
-    border-top: 5px solid var(--ink);
-    border-bottom: 5px solid var(--ink);
     overflow: hidden;
     white-space: nowrap;
+    background: var(--red);
+    color: var(--white);
+    border-top: 4px solid var(--navy);
+    border-bottom: 4px solid var(--navy);
     padding: 1rem 0;
     font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-    font-size: 1.1rem;
-    letter-spacing: 0.06em;
+    font-size: 1.08rem;
+    letter-spacing: 0.05em;
     text-transform: uppercase;
-    margin: 0;
   }
+
   .ticker-track {
     display: inline-block;
     padding-left: 100%;
-    animation: scroll 42s linear infinite;
-  }
-  .ticker-track span { margin: 0 2.5rem; }
-  .ticker-track span::before { content: "\26A0\FE0F "; }
-  @keyframes scroll {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-100%); }
+    animation: ticker-scroll 42s linear infinite;
   }
 
-  /* ── CTA FINAL ── */
-  .cta-final {
-    text-align: center;
-    padding: 12vh 6vw;
-    background:
-      radial-gradient(ellipse at 50% 50%, rgba(217, 43, 74, 0.15), transparent 60%),
-      var(--blue);
-    color: #fff;
-    border-top: 5px solid var(--ink);
-    position: relative;
+  .ticker-track span {
+    margin: 0 2.2rem;
   }
+
+  .ticker-track span::before {
+    content: "★ ";
+    color: var(--gold);
+  }
+
+  .cta-final {
+    position: relative;
+    overflow: hidden;
+    padding: 7rem 6vw;
+    background:
+      radial-gradient(circle at 18% 24%, rgba(255, 255, 255, 0.09) 0%, transparent 18%),
+      linear-gradient(135deg, #071228 0%, var(--navy) 42%, var(--navy-2) 76%, #c11b35 120%);
+    color: var(--white);
+  }
+
+  .cta-final::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.08), transparent 30%),
+      radial-gradient(circle, rgba(255, 255, 255, 0.16) 0 1.2px, transparent 1.3px);
+    background-size: auto, 24px 24px;
+    opacity: 0.24;
+    pointer-events: none;
+  }
+
+  .cta-final .section-inner {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+  }
+
   .cta-final h2 {
+    max-width: 11ch;
+    margin: 0 auto;
     font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-    font-size: clamp(2rem, 6vw, 4.2rem);
+    font-size: clamp(3rem, 6vw, 5.2rem);
+    line-height: 0.9;
     text-transform: uppercase;
     color: var(--gold);
-    margin-bottom: 1.6rem;
-    text-shadow: 4px 4px 0 var(--red);
   }
+
   .cta-final p {
-    font-style: italic;
-    font-size: clamp(1.05rem, 2.2vw, 1.4rem);
-    max-width: 44ch;
-    margin: 0 auto 2.6rem;
-    line-height: 1.65;
+    max-width: 48ch;
+    margin: 1.35rem auto 0;
+    font-size: clamp(1.08rem, 2vw, 1.34rem);
+    line-height: 1.68;
+    color: rgba(255, 255, 255, 0.92);
   }
 
-  /* ── FOOTER ── */
+  .cta-final .cta-row {
+    justify-content: center;
+  }
+
   footer {
-    background: var(--ink);
-    color: #aaa;
-    font-family: "Courier New", monospace;
-    font-size: 0.78rem;
+    background: #0a1018;
+    color: rgba(255, 255, 255, 0.68);
     text-align: center;
-    padding: 2.2rem 1.5rem;
-    line-height: 1.6;
-  }
-  footer .site { color: var(--gold); letter-spacing: 0.15em; text-transform: uppercase; font-size: 0.85rem; }
-  footer .disclaimer {
-    margin-top: 0.7rem;
-    font-style: italic;
-    opacity: 0.7;
-    max-width: 60ch;
-    margin-left: auto;
-    margin-right: auto;
+    padding: 2.2rem 1.5rem 2.4rem;
+    font-family: "Courier New", monospace;
+    font-size: 0.8rem;
+    line-height: 1.7;
   }
 
-  /* ── RESPONSIVE ── */
-  @media (max-width: 860px) {
-    nav {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-    nav .links { justify-content: flex-start; }
+  footer .site {
+    color: var(--gold);
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    font-size: 0.84rem;
   }
-  @media (max-width: 600px) {
-    .hero { padding: 6vh 5vw 4vh; min-height: 100svh; }
+
+  footer .disclaimer {
+    max-width: 62ch;
+    margin: 0.7rem auto 0;
+    opacity: 0.82;
+  }
+
+  @keyframes fade-in-down {
+    from {
+      opacity: 0;
+      transform: translateY(-18px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slam-in {
+    from {
+      opacity: 0;
+      transform: scale(1.08) translateY(22px);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+  }
+
+  @keyframes gold-pulse {
+    0%,
+    100% {
+      text-shadow: 0 10px 28px rgba(244, 197, 76, 0.1);
+    }
+    50% {
+      text-shadow: 0 12px 34px rgba(244, 197, 76, 0.26);
+    }
+  }
+
+  @keyframes ticker-scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+
+  @media (max-width: 1180px) {
+    .hero-shell {
+      grid-template-columns: 1fr;
+      align-items: start;
+    }
+
+    .hero-copy {
+      max-width: 100%;
+    }
+
+    .numbers-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 920px) {
+    .nav-inner {
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .nav-links {
+      width: 100%;
+      order: 3;
+    }
+
+    .nav-actions {
+      width: 100%;
+      justify-content: center;
+    }
+
+    .numbers-strip {
+      margin-top: -3.2rem;
+    }
+  }
+
+  @media (max-width: 760px) {
+    .topline {
+      position: relative;
+    }
+
+    .topline-track {
+      padding: 0.65rem 0.9rem;
+      gap: 0.55rem 0.9rem;
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+    }
+
+    .topline-track span::before {
+      margin-right: 0.35rem;
+    }
+
+    .site-nav {
+      position: static;
+    }
+
+    .nav-inner {
+      padding: 0.9rem 0.9rem 0.8rem;
+      gap: 0.8rem;
+      align-items: stretch;
+    }
+
+    .nav-links {
+      justify-content: flex-start;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      padding: 0.15rem 0 0.25rem;
+      gap: 0.8rem;
+    }
+
+    .nav-links::-webkit-scrollbar {
+      display: none;
+    }
+
+    .nav-links a {
+      flex: 0 0 auto;
+      padding: 0.4rem 0;
+      white-space: nowrap;
+    }
+
+    .nav-actions {
+      justify-content: stretch;
+      gap: 0.6rem;
+    }
+
+    .nav-chip {
+      flex: 1 1 0;
+      justify-content: center;
+      min-height: 44px;
+      padding: 0.7rem 0.85rem;
+      font-size: 0.64rem;
+    }
+
+    .hero {
+      padding: 2.9rem 5vw 5.1rem;
+    }
+
+    .hero::after {
+      right: -34vw;
+      top: -2vh;
+      width: 72vw;
+      height: 78vw;
+      min-width: 0;
+      min-height: 0;
+      opacity: 0.7;
+    }
+
+    .hero-shell {
+      gap: 1.5rem;
+    }
+
     h1 {
-      font-size: 2.8rem;
-      line-height: 1;
-      text-shadow: 2px 2px 0 var(--red), 5px 5px 0 var(--ink);
+      font-size: 3.55rem;
+      max-width: 7.2ch;
     }
-    h1 .gold {
-      text-shadow: 2px 2px 0 var(--red), 5px 5px 0 var(--ink), 0 0 30px var(--gold-glow);
+
+    .tagline {
+      max-width: none;
+      font-size: 1rem;
+      line-height: 1.34;
     }
+
+    .slogan-bar {
+      margin-top: 1.25rem;
+      padding: 0.85rem 0.9rem 0.9rem;
+      font-size: 0.72rem;
+      letter-spacing: 0.06em;
+    }
+
+    .cta-row {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0.75rem;
+    }
+
+    .btn {
+      width: 100%;
+      min-height: 50px;
+      padding: 0.9rem 1.15rem;
+      font-size: 0.92rem;
+    }
+
+    .hero-points {
+      gap: 0.65rem;
+      margin-top: 1.2rem;
+    }
+
+    .hero-points span {
+      width: 100%;
+      justify-content: center;
+      padding: 0.72rem 0.85rem;
+      font-size: 0.67rem;
+      letter-spacing: 0.08em;
+    }
+
+    .panel {
+      padding: 1.05rem;
+      border-radius: 22px;
+    }
+
+    .panel-label {
+      font-size: 0.66rem;
+      letter-spacing: 0.12em;
+    }
+
+    .hero-panel h2,
+    .promise-panel h3 {
+      font-size: 1.75rem;
+    }
+
+    .hero-panel p,
+    .promise-item span,
+    .num-quip,
+    .section-intro,
+    .front-card p,
+    .quote-card p,
+    .callout-note p,
+    .cta-final p {
+      font-size: 0.96rem;
+      line-height: 1.6;
+    }
+
+    .score-grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 0.7rem;
+      margin-top: 1rem;
+    }
+
+    .score-item {
+      padding: 0.85rem 0.8rem;
+      border-radius: 16px;
+    }
+
+    .score-item strong {
+      font-size: 1.7rem;
+    }
+
+    .score-item span {
+      font-size: 0.64rem;
+      letter-spacing: 0.08em;
+    }
+
+    .promise-list {
+      gap: 0.7rem;
+    }
+
+    .promise-item {
+      padding: 0.85rem 0.9rem;
+      border-radius: 16px;
+    }
+
+    .promise-item strong {
+      font-size: 1.08rem;
+    }
+
+    .mini-quote {
+      margin-top: 0.8rem;
+      padding: 0.9rem 0.95rem;
+      border-radius: 16px;
+      font-size: 0.95rem;
+    }
+
+    .numbers-strip {
+      margin-top: -1.8rem;
+      padding: 0 5vw 4.2rem;
+    }
+
+    .numbers-grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 0.9rem;
+    }
+
+    .section,
+    .theft-section,
+    .cta-final {
+      padding: 4.2rem 5vw;
+    }
+
+    .section-title {
+      max-width: 11ch;
+      font-size: 2.7rem;
+    }
+
+    .section-intro {
+      margin-top: 0.9rem;
+    }
+
+    .speech {
+      padding: 2rem 1.2rem 1.8rem;
+      border-radius: 24px;
+      font-size: 0.98rem;
+    }
+
+    .speech-wrap::before {
+      left: 1rem;
+      right: 1rem;
+      top: -10px;
+      height: 9px;
+    }
+
+    .speech::after {
+      display: none;
+    }
+
+    .speech .sig {
+      font-size: 2.1rem;
+    }
+
+    .quotes-grid,
+    .theft-grid,
+    .coalition-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .callout-note {
+      padding: 1.6rem 1.3rem;
+      border-radius: 24px;
+    }
+
+    .quote-card,
+    .front-card,
+    .theft-card,
+    .num-card {
+      padding: 1.2rem 1rem;
+      border-radius: 20px;
+    }
+
+    .quote-card .src,
+    .theft-sub,
+    .num-label,
+    .speech-podium {
+      font-size: 0.66rem;
+      letter-spacing: 0.11em;
+    }
+
+    .theft-rant,
+    .theft-verdict {
+      font-size: 0.98rem;
+      line-height: 1.65;
+    }
+
+    .flag-divider {
+      padding: 0 5vw;
+    }
+
+    .flag-divider span {
+      border-radius: 14px 14px 0 0;
+      font-size: 0.7rem;
+      letter-spacing: 0.16em;
+    }
+
+    .ticker {
+      font-size: 0.88rem;
+      padding: 0.75rem 0;
+    }
+  }
+
+  @media (max-width: 520px) {
+    .topline-track {
+      justify-content: flex-start;
+      padding: 0.58rem 0.8rem;
+      gap: 0.35rem 0.7rem;
+      font-size: 0.62rem;
+      letter-spacing: 0.1em;
+    }
+
+    .topline-track span:not(:first-child) {
+      display: none;
+    }
+
+    .brand {
+      width: 100%;
+      justify-content: flex-start;
+      gap: 0.7rem;
+    }
+
+    .brand .atom {
+      width: 40px;
+      height: 40px;
+      font-size: 1.08rem;
+    }
+
+    .brand-text strong {
+      font-size: 1.18rem;
+    }
+
+    .brand-text span {
+      font-size: 0.58rem;
+      letter-spacing: 0.13em;
+    }
+
+    .nav-links {
+      gap: 0.7rem;
+      font-size: 0.64rem;
+    }
+
+    .nav-actions {
+      flex-direction: row;
+    }
+
+    h1 {
+      font-size: 2.95rem;
+      line-height: 0.92;
+    }
+
+    .hero-kicker,
+    .eyebrow,
+    .section-kicker,
+    .theft-sub,
+    .ribbon {
+      font-size: 0.66rem;
+      letter-spacing: 0.14em;
+    }
+
+    .hero {
+      padding-top: 2.4rem;
+      padding-bottom: 4.4rem;
+    }
+
+    .hero-kicker {
+      margin-bottom: 0.8rem;
+    }
+
     .eyebrow {
-      font-size: 0.65rem;
-      padding: 0.4rem 0.9rem;
-      letter-spacing: 0.15em;
-      box-shadow: 4px 4px 0 var(--ink);
+      gap: 0.45rem;
+      padding: 0.62rem 0.8rem;
+      margin-bottom: 1rem;
     }
-    .hero-kicker { font-size: 0.68rem; }
-    .tagline { font-size: 1rem; margin: 0.8rem auto 1.5rem; }
-    .slogan-bar { font-size: 0.72rem; padding: 0.7rem 1rem; }
-    .cta-row { flex-direction: column; align-items: center; gap: 0.7rem; }
-    .btn { font-size: 0.85rem; padding: 0.9rem 1.4rem; box-shadow: 5px 5px 0 var(--ink); width: 100%; text-align: center; }
-    .section { padding: 5vh 5vw; }
-    .section-title { font-size: 2rem; text-shadow: 2px 2px 0 var(--ink); }
-    .speech { padding: 1.8rem 1.3rem; font-size: 0.96rem; }
-    .speech-wrap::before { left: 0; right: 0; top: -8px; height: 6px; }
-    .quotes-grid { grid-template-columns: 1fr; gap: 1.2rem; }
-    .quote-card { padding: 1.5rem 1.3rem; box-shadow: 7px 7px 0 var(--blue) !important; }
-    .quote-card:nth-child(even) { box-shadow: 7px 7px 0 var(--red) !important; }
-    .quote-card::before { font-size: 4rem; top: -0.8rem; }
-    .big-board { padding: 1.5rem 1.2rem; }
-    .numbers-strip { padding: 2.5rem 1.2rem; }
-    .numbers-grid { gap: 1.5rem; }
-    .num-card .big-num { font-size: 2.5rem; }
-    .ticker { font-size: 0.9rem; padding: 0.7rem 0; }
-    .cta-final { padding: 8vh 5vw; }
-    .cta-final h2 { font-size: 1.7rem; text-shadow: 2px 2px 0 var(--red); }
-    .cta-final p { font-size: 0.95rem; }
-    .coalition-grid { grid-template-columns: 1fr; }
+
+    .tagline {
+      font-size: 0.96rem;
+    }
+
+    .slogan-bar {
+      font-size: 0.68rem;
+      line-height: 1.5;
+    }
+
+    .score-grid,
+    .numbers-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .section-title,
+    .theft-headline,
+    .cta-final h2 {
+      font-size: 2.35rem;
+    }
+
+    .quote-card,
+    .front-card,
+    .theft-card {
+      border-radius: 20px;
+    }
+
+    .num-card,
+    .panel,
+    .callout-note,
+    .speech {
+      border-radius: 18px;
+    }
+
+    .section,
+    .theft-section,
+    .cta-final {
+      padding: 3.8rem 4.5vw;
+    }
+
+    .callout-note {
+      padding: 1.3rem 1rem;
+    }
+
+    .cta-final .cta-row,
+    .callout-note .cta-row {
+      margin-top: 1.15rem;
+    }
+
+    .ticker {
+      font-size: 0.8rem;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation: none !important;
+      transition: none !important;
+    }
+
+    .reveal {
+      opacity: 1;
+      transform: none;
+    }
   }
 </style>
 </head>
 <body>
 
-  <nav>
-    <a class="brand" href="index.html" aria-label="NUGA - Nuclear Physics Great Again">
-      <span class="atom">⚛</span>
-      <span class="brand-text">
-        <strong>NUGA</strong>
-        <span>Nuclear Physics Great Again</span>
-      </span>
-    </a>
-    <span class="links">
-      <a href="direct.html">Direct Reactions</a>
-      <a href="why.html">Manifesto</a>
-      <a href="legends.html">Hall of Fame</a>
-      <a href="lexicon.html">Lexicon</a>
-      <a href="barrier.html">Barrier</a>
-    </span>
+  <div class="topline">
+    <div class="topline-track">
+      <span>Official NUGA Headquarters</span>
+      <span>The Field Is Huge. The Website Should Be Too</span>
+      <span>We Are Taking The Students Back</span>
+    </div>
+  </div>
+
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <a class="brand" href="index.html" aria-label="NUGA - Nuclear Physics Great Again">
+        <span class="atom">⚛</span>
+        <span class="brand-text">
+          <strong>NUGA</strong>
+          <span>Nuclear Physics Great Again</span>
+        </span>
+      </a>
+
+      <div class="nav-links">
+        <a href="direct.html">Direct Reactions</a>
+        <a href="why.html">The Manifesto</a>
+        <a href="legends.html">The Legends</a>
+        <a href="lexicon.html">Lexicon</a>
+        <a href="barrier.html">Barrier</a>
+      </div>
+
+      <div class="nav-actions">
+        <a class="nav-chip" href="#speech">Hear The Speech</a>
+        <a class="nav-chip primary" href="direct.html">Enter DAGA Now</a>
+      </div>
+    </div>
   </nav>
 
-  <!-- ═══ HERO ═══ -->
-  <section class="hero">
-    <div class="hero-kicker">NUGA. Great name. Strong name. Everybody's saying it.</div>
-    <span class="eyebrow">⚛ The Official NUGA Campaign ⚛</span>
+  <header class="hero">
+    <div class="hero-shell">
+      <div class="hero-copy">
+        <div class="hero-kicker">NUGA. Great acronym. Strong acronym. Very memorable.</div>
+        <span class="eyebrow">★ Official Headquarters For The Comeback ★</span>
 
-    <h1>
-      Make<br />
-      <span class="gold">Nuclear Physics</span><br />
-      Great Again
-    </h1>
+        <h1>
+          Make<br />
+          <span class="gold">Nuclear Physics</span><br />
+          Great Again
+        </h1>
 
-    <p class="tagline">
-      Big field. Big machines. Big questions.
-      <strong>We have the strong force. We have the stars.</strong>
-      And we're taking the students back. Believe me.
-    </p>
+        <p class="tagline">
+          Big field. Big machines. Big questions.
+          <strong>We have the strong force. We have the stars.</strong>
+          Other fields had slicker branding. Fine. We are taking the spotlight back and we are not asking nicely.
+        </p>
 
-    <div class="slogan-bar">
-      Structure. Reactions. Stars. Heavy ions. Weak probes. Facilities. Data.
-      <b>All winners.</b> A beautiful coalition. The best coalition.
-    </div>
-
-    <div class="cta-row">
-      <a class="btn btn-red" href="#fronts">See The Big Fronts</a>
-      <a class="btn btn-gold" href="direct.html">First Front: DAGA</a>
-      <a class="btn btn-blue" href="why.html">Read The Manifesto</a>
-    </div>
-  </section>
-
-  <!-- ═══ BIG NUMBERS ═══ -->
-  <div class="numbers-strip">
-    <div class="numbers-grid reveal">
-      <div class="num-card">
-        <span class="big-num">118</span>
-        <span class="num-label">Known Elements</span>
-        <span class="num-quip">All of them. We built the table.</span>
-      </div>
-      <div class="num-card">
-        <span class="big-num">~7000</span>
-        <span class="num-label">Known Nuclides</span>
-        <span class="num-quip">Thousands more waiting.</span>
-      </div>
-      <div class="num-card">
-        <span class="big-num">10<sup style="font-size:0.5em">38</sup></span>
-        <span class="num-label">Neutrons in a Star</span>
-        <span class="num-quip">Very dense. Very powerful.</span>
-      </div>
-      <div class="num-card">
-        <span class="big-num">FRIB</span>
-        <span class="num-label">$730M Facility</span>
-        <span class="num-quip">Biggest. Most beautiful. Online now.</span>
-      </div>
-      <div class="num-card">
-        <span class="big-num">8.8</span>
-        <span class="num-label">MeV per Nucleon</span>
-        <span class="num-quip">Peak binding. Peak beauty.</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- ═══ SPEECH ═══ -->
-  <section class="section" id="speech">
-    <h2 class="section-title reveal">A Message From The Boss</h2>
-    <div class="speech-wrap reveal">
-      <div class="speech">
-        <p>Folks, nuclear physics. The <strong>greatest</strong> physics. Nobody even close. Beautiful nuclei. Beautiful reactions. Beautiful resonances. I've been saying it for years. YEARS.</p>
-        <p>Then these people came in. Very polished people. Very smug people. They made nuclear physics sound small. Like a niche. Like a side room. Like a sad little workshop with bad coffee. WRONG. Totally wrong.</p>
-        <p>And while we were being nice, very nice, condensed matter came in and took the students. Optics came in and took the students. They said, <em>"Come over here, we have prettier slides, shinier lasers, cute little qubits, very fashionable talks."</em> And the students left. They stole them. They STOLE them. Everybody knows it.</p>
-        <p>But what do they have? They don't have nuclei. They don't have the strong force. They don't have stars making the elements. They don't have isotopes nobody has ever seen before. They don't have FRIB. They don't have that kind of beauty. They don't.</p>
-        <p>We do. We have structure. We have reactions. We have astrophysics. We have heavy ions. We have weak probes. We have detectors. We have data. We have the whole beautiful thing. One of the great scientific coalitions anywhere in the world. Maybe the greatest.</p>
-        <p>So here's what's gonna happen. We're gonna talk bigger. Build bigger. Write faster. Finish more papers. Make better pages. Bring back the classics. Bring back the confidence. And yes, we're gonna bring back the students. Believe me.</p>
-        <span class="sig">The Boss</span>
-      </div>
-      <span class="speech-podium">Remarks at the NUGA National Rally</span>
-    </div>
-  </section>
-
-  <!-- ═══ THE GREAT STUDENT THEFT ═══ -->
-  <div class="theft-section">
-    <div class="theft-inner">
-      <h2 class="theft-headline reveal">The Great Student Theft</h2>
-      <div class="theft-sub reveal">Official NUGA Investigative Report</div>
-
-      <div class="theft-rant reveal">
-        They came in. Very quietly. Very sneaky. They didn't build better physics.
-        They built better <strong>branding</strong>. Prettier slides. Shinier toys.
-        They put the word "quantum" on everything. <em>Quantum dots. Quantum computing.
-        Quantum information.</em> Very fashionable. Very trendy.
-        And while we were doing serious work, real work, the work that explains
-        where every element in your body comes from, they <strong>stole our students</strong>.
-        Right out of the building. Like thieves. Because that's what they are. THIEVES.
-      </div>
-
-      <div class="theft-grid">
-        <div class="theft-card reveal">
-          <span class="theft-badge">Suspect No. 1</span>
-          <h4>Condensed Matter</h4>
-          <span class="loot">Stolen goods: ~60% of physics grad students</span>
-          <p>They took the students with fancy words. <strong>"Topological."</strong> <strong>"Emergent."</strong> <strong>"Exotic phases."</strong> You know what's exotic? A nucleus with 60 neutrons and 20 protons that lives for 0.3 seconds. That's exotic. They don't have that. They have copper wires.</p>
+        <div class="slogan-bar">
+          Structure. Reactions. Stars. Heavy ions. Weak probes. Facilities. Data.
+          <b>All strong. All winning.</b> No weak links. No low-energy branding.
         </div>
 
-        <div class="theft-card reveal">
-          <span class="theft-badge">Suspect No. 2</span>
-          <h4>Optics / Photonics</h4>
-          <span class="loot">Stolen goods: the "cool lab" reputation</span>
-          <p>Lasers. Everybody loves lasers. Very pretty. Very Instagram. But what do lasers tell you about the origin of gold? Nothing. About the r-process? Nothing. About why iron is the most stable nucleus? <strong>Nothing.</strong> But they got the poster space. They got the recruitment fairs. Sad.</p>
+        <div class="cta-row">
+          <a class="btn btn-red" href="#plan">See The Comeback Plan</a>
+          <a class="btn btn-gold" href="direct.html">First Big Win: DAGA</a>
+          <a class="btn btn-blue" href="why.html">Read The Case</a>
         </div>
 
-        <div class="theft-card reveal">
-          <span class="theft-badge">Suspect No. 3</span>
-          <h4>Quantum Info</h4>
-          <span class="loot">Stolen goods: the word "quantum" itself</span>
-          <p>We were quantum before quantum was cool. Nuclear physics. Quantum mechanics of the nucleus. Shell model. Spin. Isospin. <strong>We invented this language.</strong> Then they put "quantum" on a computer that can barely factor 15, and suddenly THEY'RE the quantum people? Unbelievable. Truly unbelievable.</p>
-        </div>
-
-        <div class="theft-card reveal">
-          <span class="theft-badge">Suspect No. 4</span>
-          <h4>Machine Learning</h4>
-          <span class="loot">Stolen goods: the "future of science" narrative</span>
-          <p>They said, <strong>"The future is AI."</strong> They said, "Neural networks will replace theory." Very bold. Very loud. But can a neural network tell you the spectroscopic factor of a knockout reaction? Can it derive the optical potential from first principles? <strong>No sir.</strong> It cannot.</p>
+        <div class="hero-points">
+          <span>Recruit The Best Students</span>
+          <span>Make Big Questions Visible</span>
+          <span>Turn Attention Into Momentum</span>
         </div>
       </div>
 
-      <div class="theft-verdict reveal">
-        <span class="verdict-label">The Verdict</span>
-        They didn't win because they were better. They won because they were <strong>louder</strong>.
-        They had better marketing. Better tweets. Better elevator pitches.
-        But we have the <strong>nucleus</strong>. We have the <strong>strong force</strong>.
-        We have <strong>stars</strong> making every element heavier than iron.
-        And now? Now we're going to be loud too. <strong>Louder.</strong>
-        The students are coming back. Believe me.
-      </div>
+      <aside class="hero-side">
+        <div class="panel hero-panel reveal">
+          <span class="panel-label">2026 Victory Memo</span>
+          <h2>This field should sound like it owns the room.</h2>
+          <p>
+            Nuclear physics already has the machines, the scale, and the unforgettable phenomena.
+            The science was never the problem. The problem was presentation. Too quiet. Too polite. Not anymore.
+          </p>
+          <div class="score-grid">
+            <div class="score-item">
+              <strong>118</strong>
+              <span>Elements already under management</span>
+            </div>
+            <div class="score-item">
+              <strong>FRIB</strong>
+              <span>Big machine. Serious leverage.</span>
+            </div>
+            <div class="score-item">
+              <strong>Stars</strong>
+              <span>Origin story nobody else can fake</span>
+            </div>
+            <div class="score-item">
+              <strong>DAGA</strong>
+              <span>First front. First real win.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel promise-panel reveal">
+          <span class="panel-label">Platform Planks</span>
+          <h3>The Three Guarantees</h3>
+          <div class="promise-list">
+            <div class="promise-item">
+              <strong>Sell The Stakes</strong>
+              <span>Lead with stars, elements, rare isotopes, and the strongest force in nature. If the room stays sleepy, hit them harder.</span>
+            </div>
+            <div class="promise-item">
+              <strong>Build Clear Gateways</strong>
+              <span>Direct reactions go first, but structure, stars, data, and facilities each get a strong public-facing entry point. No more hiding the good stuff.</span>
+            </div>
+            <div class="promise-item">
+              <strong>Convert Interest Into People</strong>
+              <span>Use better pages, better explanations, and better teaching to turn curiosity into students, talks, and papers. That is how you beat prettier posters.</span>
+            </div>
+          </div>
+          <div class="mini-quote">"The mission is simple: make the scale obvious, hit the weak branding, and then grow the field fast."</div>
+        </div>
+      </aside>
     </div>
-  </div>
+  </header>
 
-  <!-- ═══ GREAT FRONTS QUOTES ═══ -->
-  <section class="section">
-    <h2 class="section-title reveal">The Great Fronts</h2>
-    <div class="quotes-grid">
-      <div class="quote-card reveal">
-        <p>Direct reactions. Transfer. Breakup. Knockout. The classics. Beautiful cross sections. Beautiful angular distributions. We start there because it's ready to win right now. Right now.</p>
-        <span class="src">On The First Front</span>
-      </div>
-
-      <div class="quote-card reveal">
-        <p>Shell model. <em>Ab initio</em>. Density functional. Very smart people. High-IQ people. But when you want to know what happens when you actually HIT the nucleus, you come back to us. You always come back.</p>
-        <span class="src">On Structure</span>
-      </div>
-
-      <div class="quote-card reveal">
-        <p>Condensed matter stole the students. Optics stole the students. They had better branding. They had shinier toys. We had the nucleus and somehow we were losing the room. Sad. Very sad. Not anymore.</p>
-        <span class="src">On Student Theft</span>
-      </div>
-
-      <div class="quote-card reveal">
-        <p>Nuclear astrophysics. Tremendous field. One little resonance. One tiny rate. Suddenly the whole universe looks different. That's power. Real power.</p>
-        <span class="src">On The Stars</span>
-      </div>
-
-      <div class="quote-card reveal">
-        <p>FRIB. Huge machine. Beautiful machine. If you build a machine like that and then give it small ideas, that's malpractice. Scientific malpractice. Total disaster.</p>
-        <span class="src">On Facilities</span>
-      </div>
-
-      <div class="quote-card reveal">
-        <p>R-matrix. Optical model. Coupled channels. Old words? No. Great words. Winning words. The textbooks were right. They were very, very right.</p>
-        <span class="src">On The Canon</span>
-      </div>
-
-      <div class="quote-card reveal">
-        <p>Heavy ions. People think it's chaos. I see beauty. I see giant collective motion. I see people smashing very expensive things together for truth. Fantastic. Absolutely fantastic.</p>
-        <span class="src">On Heavy Ions</span>
-      </div>
-
-      <div class="quote-card reveal">
-        <p>Everybody wants the number. Nobody wants to clean the number. Very unfair. The data people do the hard work. The dirty work. The beautiful work. We respect them.</p>
-        <span class="src">On Data</span>
-      </div>
-
-      <div class="quote-card reveal">
-        <p>Nuclear physics never stopped being great. Never. The problem is we stopped talking like winners. We sounded cautious. We sounded small. We're ending that. First thing.</p>
-        <span class="src">On The Vibe Shift</span>
+  <section class="numbers-strip">
+    <div class="strip-shell">
+      <div class="ribbon reveal">Very Strong Numbers. Very Beautiful Numbers.</div>
+      <div class="numbers-grid reveal">
+        <div class="num-card">
+          <span class="big-num">118</span>
+          <span class="num-label">Known Elements</span>
+          <span class="num-quip">All of them. Entire table. Total control.</span>
+        </div>
+        <div class="num-card">
+          <span class="big-num">~7000</span>
+          <span class="num-label">Known Nuclides</span>
+          <span class="num-quip">Thousands known. More out there. Tremendous upside.</span>
+        </div>
+        <div class="num-card">
+          <span class="big-num">10<sup class="exp-num">38</sup></span>
+          <span class="num-label">Neutrons In A Star</span>
+          <span class="num-quip">Very dense. Very powerful. Absolutely enormous energy.</span>
+        </div>
+        <div class="num-card">
+          <span class="big-num">FRIB</span>
+          <span class="num-label">$730M Facility</span>
+          <span class="num-quip">Huge machine. Beautiful machine. Finally in the room.</span>
+        </div>
+        <div class="num-card">
+          <span class="big-num">8.8</span>
+          <span class="num-label">MeV Per Nucleon</span>
+          <span class="num-quip">Peak binding. Strong fundamentals. Nobody debates it.</span>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ═══ FRONTS COALITION ═══ -->
-  <section class="section" id="fronts">
-    <h2 class="section-title reveal">Many Fronts. One Great Field.</h2>
-    <div class="coalition-grid">
-      <div class="front-card current reveal">
-        <span class="label">⚛ First Front</span>
-        <h3>Direct Reactions</h3>
-        <p>Transfer, breakup, knockout, optical models, CDCC, R-matrix. First organized campaign page. First big push. Not the whole country.</p>
+  <main>
+    <section class="section section-paper" id="speech">
+      <div class="section-inner">
+        <p class="section-kicker reveal">Live From Headquarters</p>
+        <h2 class="section-title reveal">A Message From The Boss</h2>
+        <p class="section-intro reveal">
+          This is not a delicate memo. It is a rally speech for a field that was always huge and should have sounded huge the whole time.
+        </p>
+
+        <div class="speech-wrap reveal">
+          <div class="speech">
+            <p>Nuclear physics is a <strong>monster</strong> field. A giant. Maybe the giant. Beautiful nuclei. Beautiful reactions. Beautiful resonances. The kind of science that explains where matter comes from and how stars burn. Serious subject. Serious scale.</p>
+            <p>And yet for years we let lighter-weight branding walk into the room and act like they owned the future. Very glossy. Very polished. Very overrated. Good marketing, yes. Better physics, no.</p>
+            <p>So how do we make it great again? First, we stop talking small. No more niche language. No more apologizing for difficulty. We lead with the big questions and the beautiful phenomena, and if people still do not get it, we say it louder.</p>
+            <p>Second, we build better on-ramps. Better pages. Better lectures. Better explanations. Better stories for undergrads, new students, and smart outsiders who would love the field if somebody actually showed it to them properly instead of mumbling through slide 47.</p>
+            <p>Third, we connect the whole machine. Structure to reactions. Reactions to stars. Theory to data. Facilities to people. Not six little islands. One field. One coalition. One serious identity. That is how major fields behave.</p>
+            <p>Fourth, we use the tools without worshipping the tools. Modern computing, better visualization, better analysis, faster communication. Fine. Good. Use all of it. But use it in service of nuclear physics, not as a replacement for it. The nucleus stays at the center.</p>
+            <p>That is the comeback. Bigger story. Better gateways. Sharper elbows. Stronger recruitment. Stronger public face. The science was already there. Now the field gets the confidence, the presentation, and the edge to match it.</p>
+            <span class="sig">The Boss</span>
+          </div>
+          <span class="speech-podium">Remarks At NUGA Headquarters</span>
+        </div>
       </div>
-      <div class="front-card reveal">
-        <span class="label">Big Front</span>
-        <h3>Nuclear Structure</h3>
-        <p>Shell model, <em>ab initio</em>, density functional, collective motion, spectroscopy. The inside game. The deep game. Very high-level.</p>
+    </section>
+
+    <section class="section" id="plan">
+      <div class="section-inner">
+        <p class="section-kicker reveal">The Comeback Plan</p>
+        <h2 class="section-title reveal">How We Make Nuclear Physics Great Again</h2>
+        <p class="section-intro reveal">
+          Not just attitude. Not just slogans. A real program: clearer story, stronger recruitment, better public-facing pages, tighter connections across the whole field, and enough aggression to stop losing attention to weaker science with stronger marketing.
+        </p>
+
+        <div class="coalition-grid">
+          <div class="front-card current reveal">
+            <span class="label">Step One</span>
+            <h3>Lead With Big Questions</h3>
+            <p>Open with stars, elements, rare isotopes, and the strong force. Start with the part that makes people look up, not the part that makes them feel excluded. Do not open weak.</p>
+          </div>
+
+          <div class="front-card reveal">
+            <span class="label">Step Two</span>
+            <h3>Build Better Gateways</h3>
+            <p>Give each front of the field a page that is clear, vivid, and inviting. If a smart student lands here, they should know why this work matters in under a minute. If they leave confused, that is on us.</p>
+          </div>
+
+          <div class="front-card reveal">
+            <span class="label">Step Three</span>
+            <h3>Recruit Through Story</h3>
+            <p>People join fields when they can see themselves inside the story. Better talks, better teaching, and better explanations are not decoration. They are recruitment infrastructure. That is how you take students back.</p>
+          </div>
+
+          <div class="front-card reveal">
+            <span class="label">Step Four</span>
+            <h3>Connect The Coalition</h3>
+            <p>Structure, reactions, astrophysics, heavy ions, weak probes, facilities, and data should reinforce each other. The field grows faster when it speaks with one identity instead of six timid sub-identities.</p>
+          </div>
+
+          <div class="front-card reveal">
+            <span class="label">Step Five</span>
+            <h3>Use Modern Tools Properly</h3>
+            <p>Use computation, visualization, and machine learning where they help. But keep the nucleus at the center. Tools support the field. They do not replace the field. Buzzwords are not a research program.</p>
+          </div>
+
+          <div class="front-card reveal">
+            <span class="label">Step Six</span>
+            <h3>Act Like A Major Field</h3>
+            <p>Big facilities. Big questions. Big consequences. The external presentation should finally match the internal scale of the science. Stop entering the room like underdogs when the science is already heavyweight.</p>
+          </div>
+        </div>
       </div>
-      <div class="front-card reveal">
-        <span class="label">Big Front</span>
-        <h3>Astrophysics</h3>
-        <p>Reaction rates, resonances, capture, nucleosynthesis, stellar explosions. Tiny numbers. Enormous consequences. Beautiful drama.</p>
-      </div>
-      <div class="front-card reveal">
-        <span class="label">Big Front</span>
-        <h3>Heavy Ions</h3>
-        <p>Collective flow, multifragmentation, dissipation, transport, extreme many-body dynamics. Big collisions. Big questions. Big physics.</p>
-      </div>
-      <div class="front-card reveal">
-        <span class="label">Big Front</span>
-        <h3>Weak Probes</h3>
-        <p>Beta decay, neutrinos, electroweak structure, symmetry tests. Quiet signals. Very powerful signals. Underestimated signals.</p>
-      </div>
-      <div class="front-card reveal">
-        <span class="label">Big Front</span>
-        <h3>Data And Facilities</h3>
-        <p>FRIB, FAIR, RIBF, detectors, evaluation, beam time, instrumentation. No machine, no movement. Everybody knows it.</p>
-      </div>
+    </section>
+
+    <div class="flag-divider">
+      <span>Big Science Needs Big Language</span>
     </div>
 
-    <div class="callout-note reveal">
-      <p>
-        <strong>Direct reactions are the first front, not the whole field.</strong>
-        We start there because it's ready. Very ready. But this homepage is for all of nuclear physics:
-        structure, stars, heavy ions, weak probes, data, facilities, the whole beautiful thing.
-      </p>
-      <div class="cta-row" style="justify-content:center; margin-bottom:0;">
-        <a class="btn btn-red" href="direct.html">Enter The DAGA Wing</a>
-        <a class="btn btn-gold" href="legends.html">Meet The Legends</a>
-      </div>
-    </div>
-  </section>
+    <section class="theft-section">
+      <div class="theft-inner">
+        <h2 class="theft-headline reveal">The Great Student Theft</h2>
+        <div class="theft-sub reveal">Official NUGA Investigative File</div>
 
-  <!-- ═══ TICKER ═══ -->
+        <div class="theft-rant reveal">
+          This is not just a complaint section. It is a lesson section.
+          For a while, other areas were simply better at <strong>branding</strong>. Better posters. Better buzzwords. Shinier demos.
+          Some of it was impressive. Some of it was just packaging. Let us be honest.
+          We often assumed the science would speak for itself. It does not. Not automatically.
+          So yes, we hit the weak branding. We mock the empty hype. And then we do the serious part:
+          explain the field better, show the stakes faster, and make the beauty of the subject impossible to miss.
+        </div>
+
+        <div class="theft-grid">
+          <div class="theft-card reveal">
+            <span class="theft-badge">Suspect No. 1</span>
+            <h4>Condensed Matter</h4>
+            <span class="loot">Stolen goods: ~60% of the grad-student attention economy</span>
+            <p>They took the students with fancy words. <strong>"Topological."</strong> <strong>"Emergent."</strong> <strong>"Exotic phases."</strong> Fine words. Nice words. But a neutron-rich nucleus that should not exist and still does? That is exotic. Copper with better publicists is not exotic.</p>
+          </div>
+
+          <div class="theft-card reveal">
+            <span class="theft-badge">Suspect No. 2</span>
+            <h4>Optics / Photonics</h4>
+            <span class="loot">Stolen goods: the cool-lab narrative</span>
+            <p>Lasers photograph beautifully. Terrific for posters. Terrific for open-house day. But do they explain the origin of gold? No. Do they explain the r-process? No. Do they explain iron-peak stability? <strong>Not even close.</strong> Still, they got the good posters. Very frustrating.</p>
+          </div>
+
+          <div class="theft-card reveal">
+            <span class="theft-badge">Suspect No. 3</span>
+            <h4>Quantum Info</h4>
+            <span class="loot">Stolen goods: the word quantum</span>
+            <p>We were doing quantum when quantum was still in short pants. Shell model. Spin. Isospin. Tunneling. <strong>The vocabulary was ours.</strong> Then somebody puts "quantum" on a pitch deck and suddenly they own the word? Not acceptable. Not serious.</p>
+          </div>
+
+          <div class="theft-card reveal">
+            <span class="theft-badge">Suspect No. 4</span>
+            <h4>Machine Learning</h4>
+            <span class="loot">Stolen goods: the future-of-science storyline</span>
+            <p>Every few months somebody says the future is just models, chips, and buzzwords. Fine. Use the tools. Good tools. But the tools are not the field. A network does not replace judgment, reaction theory, or hard nuclear data. <strong>It just does not.</strong></p>
+          </div>
+        </div>
+
+        <div class="theft-verdict reveal">
+          <span class="verdict-label">The Verdict</span>
+          They won the microphone, not the argument. Fine. Lesson learned.
+          Better slogans. Better slides. Better elevator pitches.
+          Our response is not whining. It is organization, pressure, and better delivery.
+          We keep the <strong>nucleus</strong>, the <strong>strong force</strong>, the <strong>stars</strong>, and the real science.
+          Then we add better explanation, better presentation, and better recruitment.
+          That is how the room changes. That is how the field gets stronger.
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="quotes">
+      <div class="section-inner">
+        <p class="section-kicker reveal">The Talking Points</p>
+        <h2 class="section-title reveal">The Great Fronts</h2>
+        <p class="section-intro reveal">
+          Every serious campaign needs lines that hit hard. These are the lines for direct reactions, structure, stars, heavy ions, facilities, data, and the whole beautiful operation.
+        </p>
+
+        <div class="quotes-grid">
+          <div class="quote-card reveal">
+            <p>Direct reactions. Transfer. Breakup. Knockout. The classics. Beautiful cross sections. Beautiful angular distributions. Old school? No. Big league. You hit the nucleus and it tells you the truth.</p>
+            <span class="src">On The First Big Win</span>
+          </div>
+
+          <div class="quote-card reveal">
+            <p>Shell model. <em>Ab initio</em>. Density functional. Very smart. Very deep. Beautiful theory. But when somebody asks what actually happens in the collision, they end up back with us. They always do.</p>
+            <span class="src">On Structure</span>
+          </div>
+
+          <div class="quote-card reveal">
+            <p>Other fields were better at attracting attention. Fine. Some of them deserved it. Some of them absolutely did not. Either way, the fix is the same: tell our own story clearly, loudly, and with enough confidence to match the science.</p>
+            <span class="src">On Student Theft</span>
+          </div>
+
+          <div class="quote-card reveal">
+            <p>Nuclear astrophysics. Tiny rate. Huge consequence. One resonance moves and suddenly the whole universe looks different. That is leverage. Serious leverage.</p>
+            <span class="src">On The Stars</span>
+          </div>
+
+          <div class="quote-card reveal">
+            <p>FRIB. Huge machine. Beautiful machine. If you build something that big and then bring small ideas into the room, that is scientific malpractice. Total waste of great infrastructure.</p>
+            <span class="src">On Facilities</span>
+          </div>
+
+          <div class="quote-card reveal">
+            <p>R-matrix. Optical model. Coupled channels. Old words? No. Championship words. The textbooks were not the problem. The lack of confidence was the problem.</p>
+            <span class="src">On The Canon</span>
+          </div>
+
+          <div class="quote-card reveal">
+            <p>Heavy ions. People say chaos. I say spectacle. Giant collective motion. Extreme many-body drama. Expensive collisions producing real answers. Fantastic field. Tremendous visuals too.</p>
+            <span class="src">On Heavy Ions</span>
+          </div>
+
+          <div class="quote-card reveal">
+            <p>Everybody wants the number. Nobody wants to clean the number. Very unfair. The data people do the difficult work, the tedious work, the absolutely essential work. Put some respect on it.</p>
+            <span class="src">On Data</span>
+          </div>
+
+          <div class="quote-card reveal">
+            <p>Nuclear physics never stopped being great. The mistake was rhetorical. We sounded careful. We sounded small. We sounded like people asking permission. That phase is over.</p>
+            <span class="src">On The Vibe Shift</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-paper" id="fronts">
+      <div class="section-inner">
+        <p class="section-kicker reveal">One Big Coalition</p>
+        <h2 class="section-title reveal">Many Fronts. One Great Field.</h2>
+        <p class="section-intro reveal">
+          This is not a one-page hobby. It is a coalition. A large one. Direct reactions go first because they are ready, but the whole field comes with it.
+        </p>
+
+        <div class="coalition-grid">
+          <div class="front-card current reveal">
+            <span class="label">⚛ First Front</span>
+            <h3>Direct Reactions</h3>
+            <p>Transfer, breakup, knockout, optical models, CDCC, R-matrix. First organized page. First hard push. First place to put real points on the board.</p>
+          </div>
+
+          <div class="front-card reveal">
+            <span class="label">Big Front</span>
+            <h3>Nuclear Structure</h3>
+            <p>Shell model, <em>ab initio</em>, density functional, collective motion, spectroscopy. The inside game. The deep game. Very serious people doing very serious work.</p>
+          </div>
+
+          <div class="front-card reveal">
+            <span class="label">Big Front</span>
+            <h3>Astrophysics</h3>
+            <p>Reaction rates, resonances, capture, nucleosynthesis, stellar explosions. Tiny numbers. Enormous consequences. Cosmic scale from microscopic details.</p>
+          </div>
+
+          <div class="front-card reveal">
+            <span class="label">Big Front</span>
+            <h3>Heavy Ions</h3>
+            <p>Collective flow, multifragmentation, dissipation, transport, extreme many-body dynamics. Big collisions. Big questions. Big visual drama. Very hard to ignore.</p>
+          </div>
+
+          <div class="front-card reveal">
+            <span class="label">Big Front</span>
+            <h3>Weak Probes</h3>
+            <p>Beta decay, neutrinos, electroweak structure, symmetry tests. Quiet signals. Powerful implications. Hugely underrated territory.</p>
+          </div>
+
+          <div class="front-card reveal">
+            <span class="label">Big Front</span>
+            <h3>Data And Facilities</h3>
+            <p>FRIB, FAIR, RIBF, detectors, evaluation, beam time, instrumentation. No machine, no movement. No instruments, no momentum. That is just reality.</p>
+          </div>
+        </div>
+
+        <div class="callout-note reveal">
+          <p>
+            <strong>Direct reactions are the first front, not the whole field.</strong>
+            We start there because it is ready to move right now. But this homepage is for all of nuclear physics:
+            structure, stars, heavy ions, weak probes, data, facilities, the entire operation.
+          </p>
+          <div class="cta-row">
+            <a class="btn btn-red" href="direct.html">Go To DAGA</a>
+            <a class="btn btn-gold" href="legends.html">Meet The Legends</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
   <div class="ticker" aria-hidden="true">
     <div class="ticker-track">
-      <span>NUGA. Great name. Great movement</span>
-      <span>Condensed matter stole the students. STOLE them. We want them back</span>
-      <span>Optics had the lasers. We have the nucleus. No contest</span>
-      <span>Big machines deserve big rhetoric</span>
-      <span>They put "quantum" on everything. WE were quantum first</span>
-      <span>Make direct reactions the first big win</span>
+      <span>NUGA. Great acronym. Great movement</span>
+      <span>Lead with stars. Lead with elements. Lead with scale</span>
+      <span>Big machines deserve big language</span>
+      <span>Make direct reactions the first real win</span>
       <span>Structure, stars, heavy ions, weak probes, all of it</span>
-      <span>60% of grad students went to condensed matter. Biggest heist in physics</span>
+      <span>Better gateways bring better students</span>
+      <span>Some hype is empty. The nucleus is not</span>
       <span>Bring the textbooks back into the room</span>
-      <span>No more small-field energy. None</span>
-      <span>Nuclear physics was always great. Always</span>
-      <span>They had better slides. We had better science. Now we have both</span>
+      <span>No more small-field energy. Finished</span>
+      <span>Nuclear physics was always great. Presentation lagged</span>
+      <span>Better science. Better rhetoric. Better recruitment</span>
+      <span>One field. One coalition. Serious momentum</span>
+      <span>Put the whole field back on the main stage</span>
     </div>
   </div>
 
-  <!-- ═══ CTA FINAL ═══ -->
   <section class="cta-final">
-    <h2 class="reveal">Join The Whole Movement</h2>
-    <p class="reveal">
-      We're not making one little subfield great again. We're making the whole beautiful operation great again.
-      Start with direct reactions. Then take the rest back. Structure. Stars. Data. Theory. Facilities. All of it.
-    </p>
-    <div class="cta-row reveal">
-      <a class="btn btn-red" href="direct.html">Start With Direct Reactions</a>
-      <a class="btn btn-gold" href="legends.html">Meet The Legends</a>
+    <div class="section-inner">
+      <p class="section-kicker reveal">Join The Whole Operation</p>
+      <h2 class="reveal">Put The Whole Field Back On The Main Stage</h2>
+      <p class="reveal">
+        This is not about one little subfield. It is about restoring major-field energy across the board.
+        Start with direct reactions. Then build outward: structure, stars, data, theory, facilities, the whole field with a stronger public face and a clearer invitation in.
+      </p>
+      <div class="cta-row reveal">
+        <a class="btn btn-red" href="direct.html">Start With DAGA</a>
+        <a class="btn btn-gold" href="legends.html">See The Legends</a>
+      </div>
     </div>
   </section>
 
-  <!-- ═══ FOOTER ═══ -->
   <footer>
-    <div class="site">vibein.science · nuclear physics great again</div>
+    <div class="site">vibein.science · the biggest field</div>
     <div class="disclaimer">
-      This is the umbrella campaign. DAGA is the first organized wing. Science knows no borders. Taste, however, still matters.
+      This is the umbrella campaign. DAGA is the first organized wing. The science is serious. The tone is intentionally oversized.
     </div>
   </footer>
 
-  <!-- ═══ SCROLL REVEAL ═══ -->
   <script>
   (function () {
-    var els = document.querySelectorAll('.reveal');
+    var els = document.querySelectorAll(".reveal");
     if (!els.length) return;
+
     var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) {
-        if (e.isIntersecting) {
-          e.target.classList.add('visible');
-          io.unobserve(e.target);
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          io.unobserve(entry.target);
         }
       });
     }, { threshold: 0.12 });
-    els.forEach(function (el) { io.observe(el); });
+
+    els.forEach(function (el) {
+      io.observe(el);
+    });
   })();
   </script>
 
