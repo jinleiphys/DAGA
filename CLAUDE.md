@@ -10,8 +10,10 @@ There is **no build step, no framework, no package.json**. Each page is a single
 
 ## Files
 
-- `index.html` — landing page: hero slogan, Trump-style speech, 8 quote cards, SAD ticker, CTA
+- `index.html` — landing page (DAGA direct-reactions billboard): brand, CTA, links out to manifesto and Nuclear HQ
+- `nuclear.html` — the broader "Nuclear Physics HQ" parody page (hero slogan, Trump-style speech, 8 quote cards, SAD ticker). Previously served as `index.html`; now linked from DAGA as the wider-field companion page
 - `why.html` — manifesto subpage: 6 chapters arguing why direct reactions can be revived via vibe research, written in first-person "Boss" voice with embedded "Truth Social" pull-quotes and real arXiv citations
+- `legends.html`, `lexicon.html`, `barrier.html` — supporting subpages (Hall of Fame, glossary, Coulomb-barrier calculator)
 - `CNAME` — contains `vibeinscience.com`; managed by GitHub Pages, don't remove
 - `README.md` — deploy/DNS instructions for the custom domain
 
